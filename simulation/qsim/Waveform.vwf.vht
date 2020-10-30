@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/30/2020 10:52:31"
+-- Generated on "10/30/2020 17:50:07"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mips_project
 -- 
@@ -36,27 +36,27 @@ ARCHITECTURE mips_project_arch OF mips_project_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL FPGA_RESET_N : STD_LOGIC;
-SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL HEX3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL HEX4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL HEX5 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL funct_out : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL op_code_out : STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL saida_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL saida_regA : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL saida_regB : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL saida_rom : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL saida_ula : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT mips_project
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
 	FPGA_RESET_N : IN STD_LOGIC;
-	HEX0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX2 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX3 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX4 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX5 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	funct_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
+	op_code_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
+	saida_pc : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_regA : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_regB : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_rom : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_ula : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
@@ -66,14 +66,14 @@ BEGIN
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
 	FPGA_RESET_N => FPGA_RESET_N,
-	HEX0 => HEX0,
-	HEX1 => HEX1,
-	HEX2 => HEX2,
-	HEX3 => HEX3,
-	HEX4 => HEX4,
-	HEX5 => HEX5,
+	funct_out => funct_out,
 	KEY => KEY,
-	LEDR => LEDR,
+	op_code_out => op_code_out,
+	saida_pc => saida_pc,
+	saida_regA => saida_regA,
+	saida_regB => saida_regB,
+	saida_rom => saida_rom,
+	saida_ula => saida_ula,
 	SW => SW
 	);
 

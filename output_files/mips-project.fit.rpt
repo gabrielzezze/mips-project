@@ -1,5 +1,5 @@
 Fitter report for mips-project
-Fri Oct 30 17:42:02 2020
+Fri Oct 30 17:49:18 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Fri Oct 30 17:42:02 2020       ;
+; Fitter Status                   ; Successful - Fri Oct 30 17:49:18 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; mips-project                                ;
 ; Top-level Entity Name           ; mips_project                                ;
@@ -152,18 +152,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.9%      ;
-;     Processor 3            ;   0.8%      ;
-;     Processor 4            ;   0.8%      ;
-;     Processor 5            ;   0.8%      ;
-;     Processor 6            ;   0.8%      ;
-;     Processor 7            ;   0.8%      ;
-;     Processor 8            ;   0.8%      ;
+;     Processor 2            ;   0.7%      ;
+;     Processor 3            ;   0.6%      ;
+;     Processor 4            ;   0.6%      ;
+;     Processor 5            ;   0.6%      ;
+;     Processor 6            ;   0.6%      ;
+;     Processor 7            ;   0.6%      ;
+;     Processor 8            ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -2205,17 +2205,17 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X45_Y0 to location X55_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.14 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
+Info (11888): Total time spent on timing analysis during the Fitter is 0.94 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:06
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:07
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2246 megabytes
-    Info: Processing ended: Fri Oct 30 17:42:02 2020
-    Info: Elapsed time: 00:00:52
-    Info: Total CPU time (on all processors): 00:02:26
+    Info: Peak virtual memory: 2248 megabytes
+    Info: Processing ended: Fri Oct 30 17:49:19 2020
+    Info: Elapsed time: 00:00:56
+    Info: Total CPU time (on all processors): 00:02:11
 
 

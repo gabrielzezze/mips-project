@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "10/30/2020 17:43:04"
+-- DATE "10/30/2020 17:50:09"
 
 -- 
 -- Device: Altera 5CGXFC7C7F23C8 Package FBGA484
@@ -42,13 +42,13 @@ ENTITY 	mips_project IS
 	SW : IN std_logic_vector(9 DOWNTO 0);
 	KEY : IN std_logic_vector(3 DOWNTO 0);
 	FPGA_RESET_N : IN std_logic;
-	saida_ula : OUT std_logic_vector(31 DOWNTO 0);
-	saida_regA : OUT std_logic_vector(31 DOWNTO 0);
-	saida_regB : OUT std_logic_vector(31 DOWNTO 0);
-	funct_out : OUT std_logic_vector(5 DOWNTO 0);
-	op_code_out : OUT std_logic_vector(5 DOWNTO 0);
-	saida_rom : OUT std_logic_vector(31 DOWNTO 0);
-	saida_pc : OUT std_logic_vector(31 DOWNTO 0)
+	saida_ula : BUFFER std_logic_vector(31 DOWNTO 0);
+	saida_regA : BUFFER std_logic_vector(31 DOWNTO 0);
+	saida_regB : BUFFER std_logic_vector(31 DOWNTO 0);
+	funct_out : BUFFER std_logic_vector(5 DOWNTO 0);
+	op_code_out : BUFFER std_logic_vector(5 DOWNTO 0);
+	saida_rom : BUFFER std_logic_vector(31 DOWNTO 0);
+	saida_pc : BUFFER std_logic_vector(31 DOWNTO 0)
 	);
 END mips_project;
 
