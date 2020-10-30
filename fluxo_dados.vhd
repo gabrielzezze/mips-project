@@ -15,10 +15,11 @@ ENTITY fluxo_dados IS
         -- IN
         clk             : IN std_logic;
         palavraControle : IN std_logic_vector((PALAVRA_CONTROLE_WIDTH - 1) DOWNTO 0);
-        flag_zero_out   : OUT std_logic;
 
         -- OUT
-        opCode          : OUT std_logic_vector(5 DOWNTO 0)
+        opCode, funct          : OUT std_logic_vector(5 DOWNTO 0);
+        saida_ula, saida_regA, saida_regB : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+        saida_rom, saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0)
     );
 
 END ENTITY;
@@ -35,6 +36,7 @@ ARCHITECTURE main OF fluxo_dados IS
     SIGNAL saidaRegA, saidaRegB       : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     ALIAS opCodeLocal                 : std_logic_vector(5 DOWNTO 0) IS Instrucao(31 DOWNTO 26);
+    ALIAS functLocal                  : std_logic_vector(5 DOWNTO 0) IS Instrucao(5 DOWNTO 0);
 
     ALIAS escritaReg                  : std_logic IS palavraControle(6);
     ALIAS operacao                    : std_logic_vector(5 DOWNTO 0) IS palavraControle(5 DOWNTO 0);
@@ -115,6 +117,12 @@ BEGIN
             seletor  => operacao
     );
 
+    funct           <= functLocal;
     opCode          <= opCodeLocal;
+    saida_ula       <= saidaULA;
+    saida_regA      <= saidaRegA;
+    saida_regB      <= saidaRegB;
+    saida_rom       <= Instrucao;
+    saida_pc        <= PC_ROM;
 
 END ARCHITECTURE;

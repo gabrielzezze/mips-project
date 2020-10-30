@@ -7,11 +7,11 @@ ENTITY mips_project IS
     GENERIC (
         -- Tamanho do valor imediato determinado na 
         -- etapa de design do processador.
-        DATA_WIDTH : NATURAL := 16;
+        DATA_WIDTH : NATURAL := 32;
 
         -- Tamanho dos endereços ROM/RAM determinado na 
         -- etapa de design do processador.
-        ADDR_WIDTH : NATURAL := 26;
+        ADDR_WIDTH : NATURAL := 32;
 
         -- Tamanho das instrucoes completas determinado na 
         -- etapa de design do processador.
@@ -33,14 +33,9 @@ ENTITY mips_project IS
         -- Sinal do botão Reset da placa FPGA
         FPGA_RESET_N : IN std_logic;
 
-
-        -- SINAIS DE SAÍDA --
-        -- Sinal dos leds da placa.
-        LEDR                               : OUT std_logic_vector(9 DOWNTO 0);
-
-        -- Displays hexadecimais usados para mostrar 
-        -- os segundos, minutos e horas.
-        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : OUT std_logic_vector(6 DOWNTO 0)
+        saida_ula, saida_regA, saida_regB : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+        funct_out, op_code_out                        : OUT std_logic_vector(5 DOWNTO 0);
+        saida_rom, saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0)
     );
 	 
 END ENTITY;
@@ -51,6 +46,8 @@ ARCHITECTURE main OF mips_project IS
     SIGNAL opCode           : std_logic_vector(5 DOWNTO 0);
     SIGNAL funct            : std_logic_vector(5 DOWNTO 0);
     SIGNAL palavraControle  : std_logic_vector((PALAVRA_CONTROLE_WIDTH - 1) DOWNTO 0);
+    SIGNAL saida_ula_temp, saida_regA_temp, saida_regB_temp : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+    SIGNAL saida_rom_temp, saida_pc_temp   : std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
 
 BEGIN
     -- Instância do componente unidade_controle
@@ -75,7 +72,22 @@ BEGIN
             PORT MAP(
                 clk => CLOCK_50,
                 palavraControle => palavraControle,
-                opCode => opCode
+                opCode => opCode,
+                saida_ula => saida_ula_temp, 
+                saida_regA => saida_regA_temp, 
+                saida_regB => saida_regB_temp,
+                saida_rom => saida_rom_temp,
+                saida_pc => saida_pc_temp,
+                funct    => funct
             );
-		 
+
+
+    funct_out <= funct;
+    saida_ula <= saida_ula_temp; 
+    saida_regA <= saida_regA_temp;
+    saida_regB <= saida_regB_temp;
+    op_code_out <= opCode;
+    saida_rom <= saida_rom_temp;
+    saida_pc <= saida_pc_temp;
+    
 END ARCHITECTURE;
