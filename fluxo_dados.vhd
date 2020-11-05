@@ -9,7 +9,8 @@ ENTITY fluxo_dados IS
         ADDR_WIDTH      : NATURAL := 32;
         TOTAL_WIDTH     : NATURAL := 32;
         REG_WIDTH       : NATURAL := 5;
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 7
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 7;
+        IMEDIATO_WIDTH   : NATURAL := 16
     );
     PORT (
         -- IN
@@ -31,17 +32,32 @@ ARCHITECTURE main OF fluxo_dados IS
     SIGNAL SomaUm_MuxProxPC           : std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
     SIGNAL MuxProxPC_PC               : std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
     SIGNAL saidaULA                   : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+
+    SIGNAL saidaMux_Rt_Rd             : std_logic_vector((REG_WIDTH - 1) DOWNTO 0);
+    SIGNAL entradaB_ula               : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     
     -- Saidas Intermediarias
     SIGNAL saidaRegA, saidaRegB       : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    SIGNAL saida_somador              : std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
+
+    SIGNAL imediato_extendido         : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+    SIGNAL flag_zero                  : std_logic;
 
     ALIAS opCodeLocal                 : std_logic_vector(5 DOWNTO 0) IS Instrucao(31 DOWNTO 26);
     ALIAS functLocal                  : std_logic_vector(5 DOWNTO 0) IS Instrucao(5 DOWNTO 0);
 
+	ALIAS BEQ                         : std_logic IS palavraControle(8);
+    ALIAS muxRdRt			          : std_logic IS palavraControle(7);
     ALIAS escritaReg                  : std_logic IS palavraControle(6);
     ALIAS operacao                    : std_logic_vector(5 DOWNTO 0) IS palavraControle(5 DOWNTO 0);
+
+    ALIAS RS                          : std_logic_vector(5 DOWNTO 0) IS Instrucao(25 DOWNTO 21);
+    ALIAS RT                          : std_logic_vector(5 DOWNTO 0) IS Instrucao(20 DOWNTO 16);
+    ALIAS RD                          : std_logic_vector(5 DOWNTO 0) IS Instrucao(15 DOWNTO 11);
+    ALIAS imediato                    : std_logic_vector((IMEDIATO_WIDTH - 1) DOWNTO 0) IS Instrucao(15 DOWNTO 0);
     
     CONSTANT INCREMENTO : NATURAL := 4;
+    
 BEGIN
 
     PC : ENTITY work.registrador_generico
@@ -56,18 +72,7 @@ BEGIN
             RST    => '0'
         );
 
-    MuxProxPC : ENTITY work.mux_generico_2x1
-        GENERIC MAP(
-            larguraDados => ADDR_WIDTH
-        )
-        PORT MAP(
-            entradaA_MUX => SomaUm_MuxProxPC,
-            entradaB_MUX => (OTHERS => '0'),
-            seletor_MUX  => '0',
-            saida_MUX    => MuxProxPC_PC
-        );
-    
-    somaUm : ENTITY work.soma_constante
+    somaQuatro : ENTITY work.soma_constante
         GENERIC MAP(
             larguraDados => ADDR_WIDTH,
             constante    => INCREMENTO
@@ -75,6 +80,37 @@ BEGIN
         PORT MAP(
             entrada => PC_ROM,
             saida   => SomaUm_MuxProxPC
+        );
+
+    soma_proxPC_imedShift2 : ENTITY work.somador
+        GENERIC MAP(
+            larguraDados => ADDR_WIDTH --32
+        )
+        PORT MAP(
+            entradaA => SomaUm_MuxProxPC,
+            entradaB => (imediato_extendido(29 DOWNTO 0) & "00"),
+            saida   => saida_somador
+        );
+
+    extende_imediato : ENTITY work.extende_sinal
+        GENERIC MAP(
+            larguraDadoEntrada => IMEDIATO_WIDTH,
+            larguraDadoSaida   => ADDR_WIDTH
+        )
+        PORT MAP(
+            estendeSinal_IN    => imediato,
+            estendeSinal_OUT   => imediato_extendido
+        );
+    
+    mux_proxPC_soma_proxPCImedShift2 : ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => ADDR_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => SomaUm_MuxProxPC,
+            entradaB_MUX => saida_somador,
+            seletor_MUX  => (BEQ AND flag_zero),
+            saida_MUX    => MuxProxPC_PC
         );
 
     ROM : ENTITY work.rom_mips
@@ -89,6 +125,17 @@ BEGIN
             Dado     => Instrucao
         );
 
+    mux_rd_rt: ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => REG_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => RT,
+            entradaB_MUX => RD,
+            seletor_MUX  => muxRdRt,
+            saida_MUX    => saidaMux_Rt_Rd
+        );
+
     banco_registradores: ENTITY work.banco_registradores
         GENERIC MAP (
             larguraDados        => DATA_WIDTH,
@@ -96,14 +143,25 @@ BEGIN
         )
         PORT MAP (
             clk             => clk,
-            enderecoA       => Instrucao(25 DOWNTO 21),
-            enderecoB       => Instrucao(20 DOWNTO 16),
-            enderecoC       => Instrucao(15 DOWNTO 11),
+            enderecoA       => RS,
+            enderecoB       => RT,
+            enderecoC       => saidaMux_Rt_Rd,
             dadoEscritaC    => saidaULA,
             escreveC        => escritaReg,
 
             saidaA          => saidaRegA,
             saidaB          => saidaRegB
+        );
+
+    mux_saidaRegB_imedExt: ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => DATA_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => saidaRegB,
+            entradaB_MUX => imediato_extendido,
+            seletor_MUX  => ------,
+            saida_MUX    => entradaB_ula
         );
     
     ula : ENTITY work.ula
@@ -112,9 +170,10 @@ BEGIN
         )
         PORT MAP(
             entradaA => saidaRegA,
-            entradaB => saidaRegB,
+            entradaB => entradaB_ula,
             saida    => saidaULA,
-            seletor  => operacao
+            seletor  => operacao,
+            flag_zero => flag_zero
     );
 
     funct           <= functLocal;

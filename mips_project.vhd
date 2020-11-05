@@ -17,7 +17,7 @@ ENTITY mips_project IS
         -- etapa de design do processador.
         TOTAL_WIDTH: NATURAL := 32;
 
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 7
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 10
     );
 
     PORT (
