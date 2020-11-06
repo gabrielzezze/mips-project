@@ -32,9 +32,11 @@ ARCHITECTURE main OF fluxo_dados IS
     SIGNAL SomaUm_MuxProxPC           : std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
     SIGNAL MuxProxPC_PC               : std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
     SIGNAL saidaULA                   : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    SIGNAL saidaRAM                   : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     SIGNAL saidaMux_Rt_Rd             : std_logic_vector((REG_WIDTH - 1) DOWNTO 0);
     SIGNAL entradaB_ula               : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+    SIGNAL saida_mux_saidaULA_RAM     : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     
     -- Saidas Intermediarias
     SIGNAL saidaRegA, saidaRegB       : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
@@ -46,10 +48,14 @@ ARCHITECTURE main OF fluxo_dados IS
     ALIAS opCodeLocal                 : std_logic_vector(5 DOWNTO 0) IS Instrucao(31 DOWNTO 26);
     ALIAS functLocal                  : std_logic_vector(5 DOWNTO 0) IS Instrucao(5 DOWNTO 0);
 
-	ALIAS BEQ                         : std_logic IS palavraControle(8);
-    ALIAS muxRdRt			          : std_logic IS palavraControle(7);
-    ALIAS escritaReg                  : std_logic IS palavraControle(6);
-    ALIAS operacao                    : std_logic_vector(5 DOWNTO 0) IS palavraControle(5 DOWNTO 0);
+	ALIAS muxULA_imediato	          : std_logic IS palavraControle(9);
+	ALIAS hab_escrita_RAM	          : std_logic IS palavraControle(8);
+	ALIAS hab_leitura_RAM 	          : std_logic IS palavraControle(7);
+    ALIAS muxRT_imediato	          : std_logic IS palavraControle(6);
+	ALIAS BEQ                         : std_logic IS palavraControle(5);
+    ALIAS muxRdRt			          : std_logic IS palavraControle(4);
+    ALIAS escritaReg                  : std_logic IS palavraControle(3);
+    ALIAS operacao                    : std_logic_vector(2 DOWNTO 0) IS palavraControle(2 DOWNTO 0);
 
     ALIAS RS                          : std_logic_vector(5 DOWNTO 0) IS Instrucao(25 DOWNTO 21);
     ALIAS RT                          : std_logic_vector(5 DOWNTO 0) IS Instrucao(20 DOWNTO 16);
@@ -146,7 +152,7 @@ BEGIN
             enderecoA       => RS,
             enderecoB       => RT,
             enderecoC       => saidaMux_Rt_Rd,
-            dadoEscritaC    => saidaULA,
+            dadoEscritaC    => saida_mux_saidaULA_RAM,
             escreveC        => escritaReg,
 
             saidaA          => saidaRegA,
@@ -160,7 +166,7 @@ BEGIN
         PORT MAP(
             entradaA_MUX => saidaRegB,
             entradaB_MUX => imediato_extendido,
-            seletor_MUX  => ------,
+            seletor_MUX  => muxRT_imediato,
             saida_MUX    => entradaB_ula
         );
     
@@ -175,6 +181,31 @@ BEGIN
             seletor  => operacao,
             flag_zero => flag_zero
     );
+
+    ram : ENTITY work.ram_mips
+        GENERIC MAP(
+            dataWidth => DATA_WIDTH,
+            addrWidth => DATA_WIDTH,
+            memoryAddrWidth => 6 
+        )
+        PORT MAP(
+            clk      => clk,
+            Endereco => saidaULA,
+            Dado_in  => saidaRegB,
+            Dado_out => saidaRAM,
+            we       => hab_escrita_RAM
+        );
+    
+    mux_saidaULA_RAM: ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => DATA_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => saidaULA,
+            entradaB_MUX => saidaRAM,
+            seletor_MUX  => muxULA_imediato,
+            saida_MUX    => saida_mux_saidaULA_RAM
+        );
 
     funct           <= functLocal;
     opCode          <= opCodeLocal;
