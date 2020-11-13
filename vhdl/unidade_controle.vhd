@@ -4,7 +4,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY unidade_controle IS
     GENERIC (
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 10
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 10;
+		ULA_OP_WIDTH     : NATURAL := 2
     );
 
     PORT (
@@ -31,15 +32,15 @@ ARCHITECTURE main OF unidade_controle IS
 
 	-- ALIASES --
 	-- Usados para facilitar a montagem da palavra controle. --
-	ALIAS muxProxPC            : std_logic IS palavraControle(10);
-	ALIAS muxULA_imediato	   : std_logic IS palavraControle(9);
-	ALIAS hab_escrita_RAM	   : std_logic IS palavraControle(8);
-	ALIAS hab_leitura_RAM 	   : std_logic IS palavraControle(7);
-	ALIAS muxRT_imediato	   : std_logic IS palavraControle(6);
-	ALIAS BEQ                  : std_logic IS palavraControle(5);
-	ALIAS muxRdRt			   : std_logic IS palavraControle(4);
-    ALIAS escritaReg           : std_logic IS palavraControle(3);
-    ALIAS operacao             : std_logic_vector(2 DOWNTO 0) IS palavraControle(2 DOWNTO 0);
+	ALIAS muxProxPC            : std_logic IS palavraControle(9);
+	ALIAS muxULA_imediato	   : std_logic IS palavraControle(8);
+	ALIAS hab_escrita_RAM	   : std_logic IS palavraControle(7);
+	ALIAS hab_leitura_RAM 	   : std_logic IS palavraControle(6);
+	ALIAS muxRT_imediato	   : std_logic IS palavraControle(5);
+	ALIAS BEQ                  : std_logic IS palavraControle(4);
+	ALIAS muxRdRt			   : std_logic IS palavraControle(3);
+    ALIAS escritaReg           : std_logic IS palavraControle(2);
+    ALIAS uc_ula_op            : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) IS palavraControle(1 DOWNTO 0);
 	
 
 	-- CONSTANTS --
@@ -52,18 +53,10 @@ ARCHITECTURE main OF unidade_controle IS
     CONSTANT op_code_store : STD_LOGIC_VECTOR(5 DOWNTO 0) := "101011";
 	CONSTANT op_code_jump : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000010";
 
-	CONSTANT funct_add     : std_logic_vector(5 DOWNTO 0) := "100000";
-	CONSTANT funct_sub     : std_logic_vector(5 DOWNTO 0) := "100010";
-	CONSTANT funct_and     : std_logic_vector(5 DOWNTO 0) := "100100";
-	CONSTANT funct_or     : std_logic_vector(5 DOWNTO 0) := "100101";
-	CONSTANT funct_slt     : std_logic_vector(5 DOWNTO 0) := "101010";
+	CONSTANT ula_op_funct : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "10";
+	CONSTANT ula_op_add : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "00";
+	CONSTANT ula_op_sub : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "01";
 
-	CONSTANT op_and     : std_logic_vector(2 DOWNTO 0) := "000";
-	CONSTANT op_or      : std_logic_vector(2 DOWNTO 0) := "001";
-	CONSTANT op_add     : std_logic_vector(2 DOWNTO 0) := "010";
-	CONSTANT op_sub     : std_logic_vector(2 DOWNTO 0) := "110";
-	CONSTANT op_slt     : std_logic_vector(2 DOWNTO 0) := "111";	
-	
 
 	-- SINAIS --
 	-- Pontos de controle concatenados (palavra controle).
@@ -91,13 +84,10 @@ BEGIN
 
 	muxProxPC <= '1' WHEN (opCode = op_code_jump) ELSE '0';
 
-	-- Logica a qual determina a operação da ULA presente na palavra controle
-	-- dependendo do opcode recebido.
-    operacao <= op_add WHEN ((opCode = op_code_r AND funct = funct_add) OR opCode = op_code_load OR opCode = op_code_store) ELSE 
-				op_sub WHEN ((opCode = op_code_r AND funct = funct_sub) OR opCode = op_code_beq)  ELSE
-				op_and WHEN ((opCode = op_code_r AND funct = funct_and)) ELSE
-				op_or WHEN ((opCode = op_code_r AND funct = funct_or)) ELSE
-				op_slt WHEN ((opCode = op_code_r AND funct = funct_slt))
-				ELSE (OTHERS => 'Z');
-	 
+	uc_ula_op <= ula_op_funct WHEN (opCode = op_code_r) ELSE 
+				 ula_op_add WHEN (opCode = op_code_load OR opCode = op_code_store) ELSE 
+				 ula_op_sub WHEN (opCode = op_code_beq) else
+				 (OTHERS => '0');
+	
+	
 END ARCHITECTURE;

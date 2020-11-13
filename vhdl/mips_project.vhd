@@ -17,7 +17,10 @@ ENTITY mips_project IS
         -- etapa de design do processador.
         TOTAL_WIDTH: NATURAL := 32;
 
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 11
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 10;
+        FUNCT_WIDTH      : NATURAL := 6;
+        ULA_OP_WIDTH     : NATURAL := 2;
+        SELETOR_ULA_WIDTH : NATURAL := 3
     );
 
     PORT (
@@ -37,7 +40,9 @@ ENTITY mips_project IS
         funct_out, op_code_out                        : OUT std_logic_vector(5 DOWNTO 0);
         saida_rom, saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
         flag_zero_out         : OUT std_logic;
-        operacao_out          : OUT std_logic_vector(2 downto 0)
+        operacao_out          : OUT std_logic_vector(2 downto 0);
+        uc_entrada_ula        : OUT std_logic_vector(1 DOWNTO 0);
+        palavra_controle_out  : OUT std_logic_vector((PALAVRA_CONTROLE_WIDTH - 1) DOWNTO 0)
     );
 	 
 END ENTITY;
@@ -51,12 +56,15 @@ ARCHITECTURE main OF mips_project IS
     SIGNAL saida_ula_temp, saida_regA_temp, saida_regB_temp : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     SIGNAL saida_rom_temp, saida_pc_temp   : std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
     SIGNAL flag_zero_temp : std_logic;
+    SIGNAL ula_out_op : std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0);
+
 
 BEGIN
     -- Instância do componente unidade_controle
     unidade_controle : ENTITY work.unidade_controle
         GENERIC MAP (
-            PALAVRA_CONTROLE_WIDTH => PALAVRA_CONTROLE_WIDTH
+            PALAVRA_CONTROLE_WIDTH => PALAVRA_CONTROLE_WIDTH,
+            ULA_OP_WIDTH => ULA_OP_WIDTH
         )
         PORT MAP(
             clk => CLOCK_50,
@@ -71,7 +79,10 @@ BEGIN
                 DATA_WIDTH => DATA_WIDTH,
                 ADDR_WIDTH => ADDR_WIDTH,
                 TOTAL_WIDTH => TOTAL_WIDTH,
-                PALAVRA_CONTROLE_WIDTH => PALAVRA_CONTROLE_WIDTH
+                PALAVRA_CONTROLE_WIDTH => PALAVRA_CONTROLE_WIDTH,
+                FUNCT_WIDTH => FUNCT_WIDTH,
+                ULA_OP_WIDTH => ULA_OP_WIDTH,
+                SELETOR_ULA_WIDTH => SELETOR_ULA_WIDTH
             )
             PORT MAP(
                 clk => CLOCK_50,
@@ -83,7 +94,8 @@ BEGIN
                 saida_rom => saida_rom_temp,
                 saida_pc => saida_pc_temp,
                 funct    => funct,
-                flag_zero_out => flag_zero_temp
+                flag_zero_out => flag_zero_temp,
+                ula_out_op    => ula_out_op
             );
 
 
@@ -95,6 +107,8 @@ BEGIN
     saida_rom <= saida_rom_temp;
     saida_pc <= saida_pc_temp;
     flag_zero_out <= flag_zero_temp;
-    operacao_out <= palavraControle(2 DOWNTO 0);
+    operacao_out <= ula_out_op;
+    uc_entrada_ula <= palavraControle(1 downto 0);
+    palavra_controle_out <= palavraControle;
     
 END ARCHITECTURE;

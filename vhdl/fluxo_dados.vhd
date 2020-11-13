@@ -10,7 +10,10 @@ ENTITY fluxo_dados IS
         TOTAL_WIDTH     : NATURAL := 32;
         REG_WIDTH       : NATURAL := 5;
         PALAVRA_CONTROLE_WIDTH: NATURAL := 7;
-        IMEDIATO_WIDTH   : NATURAL := 16
+        IMEDIATO_WIDTH   : NATURAL := 16;
+        FUNCT_WIDTH      : NATURAL := 6;
+        ULA_OP_WIDTH     : NATURAL := 2;
+        SELETOR_ULA_WIDTH : NATURAL := 3
     );
     PORT (
         -- IN
@@ -21,7 +24,8 @@ ENTITY fluxo_dados IS
         opCode, funct          : OUT std_logic_vector(5 DOWNTO 0);
         saida_ula, saida_regA, saida_regB : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
         saida_rom, saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
-        flag_zero_out         : out std_logic
+        flag_zero_out         : out std_logic;
+        ula_out_op            : OUT std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0)
     );
 
 END ENTITY;
@@ -46,18 +50,20 @@ ARCHITECTURE main OF fluxo_dados IS
     SIGNAL imediato_extendido         : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     SIGNAL flag_zero                  : std_logic;
 
+    SIGNAL seletor_ula_local : std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0);
+
     ALIAS opCodeLocal                 : std_logic_vector(5 DOWNTO 0) IS Instrucao(31 DOWNTO 26);
     ALIAS functLocal                  : std_logic_vector(5 DOWNTO 0) IS Instrucao(5 DOWNTO 0);
 
-    ALIAS muxProxPC                   : std_logic IS palavraControle(10);
-	ALIAS muxULA_imediato	          : std_logic IS palavraControle(9);
-	ALIAS hab_escrita_RAM	          : std_logic IS palavraControle(8);
-	ALIAS hab_leitura_RAM 	          : std_logic IS palavraControle(7);
-    ALIAS muxRT_imediato	          : std_logic IS palavraControle(6);
-	ALIAS BEQ                         : std_logic IS palavraControle(5);
-    ALIAS muxRdRt			          : std_logic IS palavraControle(4);
-    ALIAS escritaReg                  : std_logic IS palavraControle(3);
-    ALIAS operacao                    : std_logic_vector(2 DOWNTO 0) IS palavraControle(2 DOWNTO 0);
+    ALIAS muxProxPC                   : std_logic IS palavraControle(9);
+	ALIAS muxULA_imediato	          : std_logic IS palavraControle(8);
+	ALIAS hab_escrita_RAM	          : std_logic IS palavraControle(7);
+	ALIAS hab_leitura_RAM 	          : std_logic IS palavraControle(6);
+    ALIAS muxRT_imediato	          : std_logic IS palavraControle(5);
+	ALIAS BEQ                         : std_logic IS palavraControle(4);
+    ALIAS muxRdRt			          : std_logic IS palavraControle(3);
+    ALIAS escritaReg                  : std_logic IS palavraControle(2);
+    ALIAS uc_ula_op                   : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) IS palavraControle(1 DOWNTO 0);
 
     ALIAS RS                          : std_logic_vector(4 DOWNTO 0) IS Instrucao(25 DOWNTO 21);
     ALIAS RT                          : std_logic_vector(4 DOWNTO 0) IS Instrucao(20 DOWNTO 16);
@@ -182,6 +188,18 @@ BEGIN
             seletor_MUX  => muxRT_imediato,
             saida_MUX    => entradaB_ula
         );
+
+    uc_ula : ENTITY work.unidade_controle_ula
+        GENERIC  MAP(
+            FUNCT_WIDTH => FUNCT_WIDTH,
+            ULA_OP_WIDTH => ULA_OP_WIDTH,
+            SELETOR_ULA_WIDTH => SELETOR_ULA_WIDTH
+        )
+        PORT MAP(
+            uc_ula_op   => uc_ula_op,
+            funct       => functLocal,
+            seletor_ula => seletor_ula_local
+    );
     
     ula : ENTITY work.ula
         GENERIC MAP(
@@ -191,7 +209,7 @@ BEGIN
             entradaA => saidaRegA,
             entradaB => entradaB_ula,
             saida    => saidaULA,
-            seletor  => operacao,
+            seletor  => seletor_ula_local,
             flag_zero => flag_zero
     );
 
@@ -228,5 +246,6 @@ BEGIN
     saida_rom       <= Instrucao;
     saida_pc        <= PC_ROM;
     flag_zero_out   <= flag_zero;
+    ula_out_op      <= seletor_ula_local;
 
 END ARCHITECTURE;

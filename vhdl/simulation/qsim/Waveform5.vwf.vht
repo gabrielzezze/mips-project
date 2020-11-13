@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/06/2020 18:45:37"
+-- Generated on "11/13/2020 15:48:18"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mips_project
 -- 
@@ -50,17 +50,17 @@ SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT mips_project
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
-	flag_zero_out : OUT STD_LOGIC;
+	flag_zero_out : BUFFER STD_LOGIC;
 	FPGA_RESET_N : IN STD_LOGIC;
-	funct_out : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+	funct_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	op_code_out : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
-	operacao_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	saida_pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_regA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_regB : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_rom : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_ula : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	op_code_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
+	operacao_out : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
+	saida_pc : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_regA : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_regB : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_rom : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_ula : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;

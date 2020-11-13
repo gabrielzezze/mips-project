@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/30/2020 17:26:38"
+-- Generated on "11/13/2020 16:29:17"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mips_project
 -- 
@@ -35,29 +35,37 @@ ARCHITECTURE mips_project_arch OF mips_project_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
+SIGNAL flag_zero_out : STD_LOGIC;
 SIGNAL FPGA_RESET_N : STD_LOGIC;
 SIGNAL funct_out : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL op_code_out : STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL operacao_out : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL palavra_controle_out : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL saida_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL saida_regA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL saida_regB : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL saida_rom : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL saida_ula : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL uc_entrada_ula : STD_LOGIC_VECTOR(1 DOWNTO 0);
 COMPONENT mips_project
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
+	flag_zero_out : BUFFER STD_LOGIC;
 	FPGA_RESET_N : IN STD_LOGIC;
-	funct_out : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+	funct_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	op_code_out : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
-	saida_pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_regA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_regB : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_rom : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_ula : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
+	op_code_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
+	operacao_out : BUFFER STD_LOGIC_VECTOR(2 DOWNTO 0);
+	palavra_controle_out : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
+	saida_pc : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_regA : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_regB : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_rom : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	saida_ula : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+	uc_entrada_ula : BUFFER STD_LOGIC_VECTOR(1 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -65,16 +73,20 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
+	flag_zero_out => flag_zero_out,
 	FPGA_RESET_N => FPGA_RESET_N,
 	funct_out => funct_out,
 	KEY => KEY,
 	op_code_out => op_code_out,
+	operacao_out => operacao_out,
+	palavra_controle_out => palavra_controle_out,
 	saida_pc => saida_pc,
 	saida_regA => saida_regA,
 	saida_regB => saida_regB,
 	saida_rom => saida_rom,
 	saida_ula => saida_ula,
-	SW => SW
+	SW => SW,
+	uc_entrada_ula => uc_entrada_ula
 	);
 
 -- CLOCK_50
@@ -88,4 +100,95 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_CLOCK_50;
+
+-- FPGA_RESET_N
+t_prcs_FPGA_RESET_N: PROCESS
+BEGIN
+	FPGA_RESET_N <= '0';
+WAIT;
+END PROCESS t_prcs_FPGA_RESET_N;
+-- KEY[3]
+t_prcs_KEY_3: PROCESS
+BEGIN
+	KEY(3) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_3;
+-- KEY[2]
+t_prcs_KEY_2: PROCESS
+BEGIN
+	KEY(2) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_2;
+-- KEY[1]
+t_prcs_KEY_1: PROCESS
+BEGIN
+	KEY(1) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_1;
+-- KEY[0]
+t_prcs_KEY_0: PROCESS
+BEGIN
+	KEY(0) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_0;
+-- SW[9]
+t_prcs_SW_9: PROCESS
+BEGIN
+	SW(9) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_9;
+-- SW[8]
+t_prcs_SW_8: PROCESS
+BEGIN
+	SW(8) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_8;
+-- SW[7]
+t_prcs_SW_7: PROCESS
+BEGIN
+	SW(7) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_7;
+-- SW[6]
+t_prcs_SW_6: PROCESS
+BEGIN
+	SW(6) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_6;
+-- SW[5]
+t_prcs_SW_5: PROCESS
+BEGIN
+	SW(5) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_5;
+-- SW[4]
+t_prcs_SW_4: PROCESS
+BEGIN
+	SW(4) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_4;
+-- SW[3]
+t_prcs_SW_3: PROCESS
+BEGIN
+	SW(3) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_3;
+-- SW[2]
+t_prcs_SW_2: PROCESS
+BEGIN
+	SW(2) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_2;
+-- SW[1]
+t_prcs_SW_1: PROCESS
+BEGIN
+	SW(1) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_1;
+-- SW[0]
+t_prcs_SW_0: PROCESS
+BEGIN
+	SW(0) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_0;
 END mips_project_arch;

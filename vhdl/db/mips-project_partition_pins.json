@@ -392,7 +392,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "funct_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "funct_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "funct_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "funct_out[4]",
+					"strict" : false
+				},
+				{
 					"name" : "funct_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "op_code_out[0]",
 					"strict" : false
 				},
 				{
@@ -404,7 +424,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "op_code_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "op_code_out[5]",
+					"strict" : false
+				},
+				{
 					"name" : "saida_rom[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[1]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[2]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[3]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[4]",
 					"strict" : false
 				},
 				{
@@ -412,11 +456,47 @@
 					"strict" : false
 				},
 				{
+					"name" : "saida_rom[6]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[7]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[8]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[9]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[10]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[11]",
+					"strict" : false
+				},
+				{
 					"name" : "saida_rom[12]",
 					"strict" : false
 				},
 				{
+					"name" : "saida_rom[13]",
+					"strict" : false
+				},
+				{
 					"name" : "saida_rom[14]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[15]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[16]",
 					"strict" : false
 				},
 				{
@@ -428,11 +508,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "saida_rom[22]",
+					"name" : "saida_rom[21]",
 					"strict" : false
 				},
 				{
 					"name" : "saida_rom[24]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[26]",
 					"strict" : false
 				},
 				{
@@ -441,6 +525,14 @@
 				},
 				{
 					"name" : "saida_rom[28]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[29]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[31]",
 					"strict" : false
 				},
 				{
@@ -577,6 +669,54 @@
 				},
 				{
 					"name" : "operacao_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "uc_entrada_ula[0]",
+					"strict" : false
+				},
+				{
+					"name" : "uc_entrada_ula[1]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[9]",
 					"strict" : false
 				},
 				{

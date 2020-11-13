@@ -22,6 +22,7 @@ run -all
 quit -f
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,6 +41,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 </modelsim_script_timing>
@@ -2100,6 +2102,146 @@ SIGNAL("operacao_out[0]")
 	PARENT = "operacao_out";
 }
 
+SIGNAL("uc_entrada_ula")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("uc_entrada_ula[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "uc_entrada_ula";
+}
+
+SIGNAL("uc_entrada_ula[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "uc_entrada_ula";
+}
+
+SIGNAL("palavra_controle_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 10;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("palavra_controle_out[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
+SIGNAL("palavra_controle_out[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "palavra_controle_out";
+}
+
 TRANSITION_LIST("CLOCK_50")
 {
 	NODE
@@ -3825,6 +3967,114 @@ TRANSITION_LIST("operacao_out[1]")
 }
 
 TRANSITION_LIST("operacao_out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("uc_entrada_ula[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("uc_entrada_ula[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("palavra_controle_out[0]")
 {
 	NODE
 	{
@@ -5848,6 +6098,146 @@ DISPLAY_LINE
 	TREE_INDEX = 201;
 	TREE_LEVEL = 1;
 	PARENT = 198;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "uc_entrada_ula";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 202;
+	TREE_LEVEL = 0;
+	CHILDREN = 203, 204;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "uc_entrada_ula[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 203;
+	TREE_LEVEL = 1;
+	PARENT = 202;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "uc_entrada_ula[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 204;
+	TREE_LEVEL = 1;
+	PARENT = 202;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 205;
+	TREE_LEVEL = 0;
+	CHILDREN = 206, 207, 208, 209, 210, 211, 212, 213, 214, 215;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 206;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 207;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 208;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 209;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 210;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 211;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 212;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 213;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 214;
+	TREE_LEVEL = 1;
+	PARENT = 205;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "palavra_controle_out[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 215;
+	TREE_LEVEL = 1;
+	PARENT = 205;
 }
 
 TIME_BAR

@@ -1,5 +1,5 @@
 Archive Project report for mips-project
-Fri Oct 30 17:51:18 2020
+Fri Nov  6 18:48:06 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Fri Oct 30 17:51:18 2020 ;
+; Archive Project Status ; Successful - Fri Nov  6 18:48:06 2020 ;
 ; Revision Name          ; mips-project                          ;
 ; Top-level Entity Name  ; mips_project                          ;
 ; Family                 ; Cyclone V                             ;
@@ -51,7 +51,7 @@ Info: File Set 'Source control' contains:
     Info: Automatically detected source files
 Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
 Info: Archive will store files relative to the closest common parent directory
-Info (13213): Using common directory /home/gabrielzezze/Desktop/mips-project/
+Info (13213): Using common directory /home/gabrielzezze/Desktop/mips-project/vhdl/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated archive '/home/gabrielzezze/Desktop/mips-project_GabrielZezze_PedroLuiz.qar'
@@ -60,10 +60,10 @@ Info: ----------------------------------------------------------
 Info: Generated report 'mips-project.archive.rpt'
 Info (23030): Evaluation of Tcl script /home/gabrielzezze/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 621 megabytes
-    Info: Processing ended: Fri Oct 30 17:51:18 2020
+    Info: Peak virtual memory: 615 megabytes
+    Info: Processing ended: Fri Nov  6 18:48:06 2020
     Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 
 +--------------------------------------------------------------------------------+
@@ -73,18 +73,26 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 +--------------------------------------------------------------------------------+
 ; /home/gabrielzezze/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf ;
 ; banco_registradores.vhd                                                        ;
+; extende_sinal.vhd                                                              ;
 ; flip_flop.vhd                                                                  ;
 ; fluxo_dados.vhd                                                                ;
 ; mips-project.qpf                                                               ;
 ; mips-project.qsf                                                               ;
 ; mips_project.vhd                                                               ;
 ; mux_generico_2x1.vhd                                                           ;
+; ram_mips.vhdl                                                                  ;
 ; registrador_generico.vhd                                                       ;
 ; rom_mips.vhd                                                                   ;
 ; soma_constante.vhd                                                             ;
+; somador.vhd                                                                    ;
 ; ula.vhd                                                                        ;
 ; unidade_controle.vhd                                                           ;
 ; Waveform.vwf                                                                   ;
+; Waveform1.vwf                                                                  ;
+; Waveform2.vwf                                                                  ;
+; Waveform3.vwf                                                                  ;
+; Waveform4.vwf                                                                  ;
+; Waveform5.vwf                                                                  ;
 +--------------------------------------------------------------------------------+
 
 
