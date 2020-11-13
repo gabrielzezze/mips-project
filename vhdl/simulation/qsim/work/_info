@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/gabrielzezze/Desktop/mips-project/simulation/qsim
 Emips_project
-Z0 w1605295759
+Z0 w1605301245
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,7 +20,7 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 134
+!i122 138
 Z10 d/home/gabrielzezze/Desktop/mips-project/vhdl/simulation/qsim
 Z11 8mips-project.vho
 Z12 Fmips-project.vho
@@ -30,9 +30,9 @@ VO^X_PliO[>]ED:Dk:L=:Y2
 !s100 Em4C3g?;NW^[4IWJ`VQRg1
 Z13 OV;C;2020.1;71
 32
-!s110 1605295759
+!s110 1605301246
 !i10b 1
-Z14 !s108 1605295759.000000
+Z14 !s108 1605301246.000000
 Z15 !s90 -work|work|mips-project.vho|
 Z16 !s107 mips-project.vho|
 !i113 1
@@ -49,14 +49,14 @@ R7
 R8
 R9
 DEx4 work 12 mips_project 0 22 O^X_PliO[>]ED:Dk:L=:Y2
-!i122 134
-l8040
-L266 87171
-VN3bhF38S>lgFLEL6SOBaX3
-!s100 :zb4Ki4cjLj:N9dPL`=m92
+!i122 138
+l7913
+L266 86339
+VXfhoZf@XR`N6_go4k1K5e3
+!s100 aR3VjnN4@V9HcDjX0DfbV3
 R13
 32
-!s110 1605295760
+!s110 1605301247
 !i10b 1
 R14
 R15
@@ -65,10 +65,10 @@ R16
 R17
 R18
 Emips_project_vhd_vec_tst
-Z19 w1605295757
+Z19 w1605301243
 R7
 R8
-!i122 135
+!i122 139
 R10
 Z20 8Waveform7.vwf.vht
 Z21 FWaveform7.vwf.vht
@@ -78,9 +78,9 @@ VKXklG?4RO1KE2bUdd][2k1
 !s100 :ZJUdeX7?QH8DGV=KI0bo2
 R13
 32
-Z22 !s110 1605295761
+Z22 !s110 1605301248
 !i10b 1
-Z23 !s108 1605295761.000000
+Z23 !s108 1605301248.000000
 Z24 !s90 -work|work|Waveform7.vwf.vht|
 Z25 !s107 Waveform7.vwf.vht|
 !i113 1
@@ -90,7 +90,7 @@ Amips_project_arch
 R7
 R8
 Z26 DEx4 work 24 mips_project_vhd_vec_tst 0 22 KXklG?4RO1KE2bUdd][2k1
-!i122 135
+!i122 139
 l71
 Z27 L34 161
 Z28 VzEWjn:i^bG?IQ@f2YB^9j0

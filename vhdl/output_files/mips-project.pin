@@ -79,90 +79,90 @@ RREF                         : A1        :        :                   :         
 MSEL2                        : A2        :        :                   :         : 9A        :                
 VCCBAT                       : A3        : power  :                   : 1.2V    :           :                
 nCONFIG                      : A4        :        :                   :         : 9A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8A        :                
+SW[7]                        : A5        : input  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : A6        : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8A        :                
-saida_pc[0]                  : A9        : output : 2.5 V             :         : 8A        : N              
-saida_regA[19]               : A10       : output : 2.5 V             :         : 8A        : N              
+saida_rom[30]                : A8        : output : 2.5 V             :         : 8A        : N              
+SW[9]                        : A9        : input  : 2.5 V             :         : 8A        : N              
+saida_pc[12]                 : A10       : output : 2.5 V             :         : 8A        : N              
 GND                          : A11       : gnd    :                   :         :           :                
-saida_ula[9]                 : A12       : output : 2.5 V             :         : 7A        : N              
-palavra_controle_out[0]      : A13       : output : 2.5 V             :         : 7A        : N              
-saida_rom[31]                : A14       : output : 2.5 V             :         : 7A        : N              
-saida_rom[20]                : A15       : output : 2.5 V             :         : 7A        : N              
+KEY[1]                       : A12       : input  : 2.5 V             :         : 7A        : N              
+saida_rom[25]                : A13       : output : 2.5 V             :         : 7A        : N              
+saida_rom[27]                : A14       : output : 2.5 V             :         : 7A        : N              
+SW[1]                        : A15       : input  : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : A16       : power  :                   : 2.5V    : 7A        :                
-saida_rom[14]                : A17       : output : 2.5 V             :         : 7A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A18       :        :                   :         : 7A        :                
+saida_rom[4]                 : A17       : output : 2.5 V             :         : 7A        : N              
+saida_rom[9]                 : A18       : output : 2.5 V             :         : 7A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7A        :                
-saida_pc[30]                 : A20       : output : 2.5 V             :         : 7A        : N              
+SW[6]                        : A20       : input  : 2.5 V             :         : 7A        : N              
 GND                          : A21       : gnd    :                   :         :           :                
-saida_ula[19]                : A22       : output : 2.5 V             :         : 7A        : N              
+saida_rom[6]                 : A22       : output : 2.5 V             :         : 7A        : N              
 GND                          : AA1       :        :                   :         : B0L       :                
 GND                          : AA2       :        :                   :         : B0L       :                
 GND                          : AA3       : gnd    :                   :         :           :                
 GND                          : AA4       : gnd    :                   :         :           :                
 AS_DATA2, DATA2              : AA5       :        :                   :         : 3A        :                
 GND                          : AA6       : gnd    :                   :         :           :                
-saida_regA[0]                : AA7       : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA8       :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA9       :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 3B        :                
+saida_regA[28]               : AA7       : output : 2.5 V             :         : 3B        : N              
+saida_regA[26]               : AA8       : output : 2.5 V             :         : 3B        : N              
+saida_pc[21]                 : AA9       : output : 2.5 V             :         : 3B        : N              
+funct_out[3]                 : AA10      : output : 2.5 V             :         : 3B        : N              
 GND                          : AA11      : gnd    :                   :         :           :                
-saida_regA[1]                : AA12      : output : 2.5 V             :         : 3B        : N              
-saida_regB[8]                : AA13      : output : 2.5 V             :         : 4A        : N              
-saida_regB[29]               : AA14      : output : 2.5 V             :         : 4A        : N              
-funct_out[5]                 : AA15      : output : 2.5 V             :         : 4A        : N              
+saida_pc[30]                 : AA12      : output : 2.5 V             :         : 3B        : N              
+saida_regA[7]                : AA13      : output : 2.5 V             :         : 4A        : N              
+funct_out[0]                 : AA14      : output : 2.5 V             :         : 4A        : N              
+saida_regA[0]                : AA15      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AA16      : power  :                   : 2.5V    : 4A        :                
-saida_regB[30]               : AA17      : output : 2.5 V             :         : 4A        : N              
-saida_regB[27]               : AA18      : output : 2.5 V             :         : 4A        : N              
-saida_regA[17]               : AA19      : output : 2.5 V             :         : 4A        : N              
-saida_regB[7]                : AA20      : output : 2.5 V             :         : 4A        : N              
+saida_regB[23]               : AA17      : output : 2.5 V             :         : 4A        : N              
+palavra_controle_out[7]      : AA18      : output : 2.5 V             :         : 4A        : N              
+saida_regB[24]               : AA19      : output : 2.5 V             :         : 4A        : N              
+saida_regB[10]               : AA20      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AA21      : power  :                   : 2.5V    : 4A        :                
-op_code_out[2]               : AA22      : output : 2.5 V             :         : 4A        : N              
+saida_regB[26]               : AA22      : output : 2.5 V             :         : 4A        : N              
 GND                          : AB1       : gnd    :                   :         :           :                
 GND                          : AB2       : gnd    :                   :         :           :                
 AS_DATA1, DATA1              : AB3       :        :                   :         : 3A        :                
 AS_DATA0, ASDO, DATA0        : AB4       :        :                   :         : 3A        :                
-saida_rom[15]                : AB5       : output : 2.5 V             :         : 3B        : N              
-palavra_controle_out[4]      : AB6       : output : 2.5 V             :         : 3B        : N              
-saida_ula[26]                : AB7       : output : 2.5 V             :         : 3B        : N              
-SW[6]                        : AB8       : input  : 2.5 V             :         : 3B        : N              
+saida_ula[13]                : AB5       : output : 2.5 V             :         : 3B        : N              
+saida_regA[19]               : AB6       : output : 2.5 V             :         : 3B        : N              
+saida_pc[27]                 : AB7       : output : 2.5 V             :         : 3B        : N              
+saida_ula[20]                : AB8       : output : 2.5 V             :         : 3B        : N              
 GND                          : AB9       : gnd    :                   :         :           :                
-saida_ula[15]                : AB10      : output : 2.5 V             :         : 3B        : N              
-saida_ula[14]                : AB11      : output : 2.5 V             :         : 3B        : N              
-saida_regA[27]               : AB12      : output : 2.5 V             :         : 4A        : N              
-saida_pc[3]                  : AB13      : output : 2.5 V             :         : 4A        : N              
+saida_pc[22]                 : AB10      : output : 2.5 V             :         : 3B        : N              
+saida_pc[16]                 : AB11      : output : 2.5 V             :         : 3B        : N              
+saida_regB[20]               : AB12      : output : 2.5 V             :         : 4A        : N              
+saida_regA[24]               : AB13      : output : 2.5 V             :         : 4A        : N              
 GND                          : AB14      : gnd    :                   :         :           :                
-funct_out[0]                 : AB15      : output : 2.5 V             :         : 4A        : N              
+saida_rom[2]                 : AB15      : output : 2.5 V             :         : 4A        : N              
 VREFB4AN0                    : AB16      : power  :                   :         : 4A        :                
-saida_regB[14]               : AB17      : output : 2.5 V             :         : 4A        : N              
-saida_regA[9]                : AB18      : output : 2.5 V             :         : 4A        : N              
+saida_ula[4]                 : AB17      : output : 2.5 V             :         : 4A        : N              
+saida_regB[22]               : AB18      : output : 2.5 V             :         : 4A        : N              
 GND                          : AB19      : gnd    :                   :         :           :                
-saida_regB[0]                : AB20      : output : 2.5 V             :         : 4A        : N              
-saida_regA[12]               : AB21      : output : 2.5 V             :         : 4A        : N              
-saida_regB[28]               : AB22      : output : 2.5 V             :         : 4A        : N              
+saida_regB[29]               : AB20      : output : 2.5 V             :         : 4A        : N              
+saida_regB[14]               : AB21      : output : 2.5 V             :         : 4A        : N              
+saida_regB[16]               : AB22      : output : 2.5 V             :         : 4A        : N              
 GND                          : B1        : gnd    :                   :         :           :                
 GND                          : B2        : gnd    :                   :         :           :                
 DNU                          : B3        :        :                   :         :           :                
 DNU                          : B4        :        :                   :         :           :                
-op_code_out[4]               : B5        : output : 2.5 V             :         : 8A        : N              
-saida_rom[7]                 : B6        : output : 2.5 V             :         : 8A        : N              
-SW[9]                        : B7        : input  : 2.5 V             :         : 8A        : N              
+saida_pc[17]                 : B5        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8A        :                
+saida_ula[25]                : B7        : output : 2.5 V             :         : 8A        : N              
 VREFB8AN0                    : B8        : power  :                   :         : 8A        :                
 GND                          : B9        : gnd    :                   :         :           :                
-saida_rom[11]                : B10       : output : 2.5 V             :         : 8A        : N              
-palavra_controle_out[2]      : B11       : output : 2.5 V             :         : 7A        : N              
-saida_rom[5]                 : B12       : output : 2.5 V             :         : 7A        : N              
-saida_ula[22]                : B13       : output : 2.5 V             :         : 7A        : N              
+funct_out[1]                 : B10       : output : 2.5 V             :         : 8A        : N              
+saida_regB[7]                : B11       : output : 2.5 V             :         : 7A        : N              
+uc_entrada_ula[1]            : B12       : output : 2.5 V             :         : 7A        : N              
+saida_rom[15]                : B13       : output : 2.5 V             :         : 7A        : N              
 GND                          : B14       : gnd    :                   :         :           :                
-saida_regA[28]               : B15       : output : 2.5 V             :         : 7A        : N              
-saida_rom[12]                : B16       : output : 2.5 V             :         : 7A        : N              
-saida_pc[25]                 : B17       : output : 2.5 V             :         : 7A        : N              
-saida_pc[15]                 : B18       : output : 2.5 V             :         : 7A        : N              
+saida_rom[5]                 : B15       : output : 2.5 V             :         : 7A        : N              
+funct_out[5]                 : B16       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B17       :        :                   :         : 7A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B18       :        :                   :         : 7A        :                
 VCCIO7A                      : B19       : power  :                   : 2.5V    : 7A        :                
-saida_pc[16]                 : B20       : output : 2.5 V             :         : 7A        : N              
-saida_pc[24]                 : B21       : output : 2.5 V             :         : 7A        : N              
-uc_entrada_ula[0]            : B22       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 7A        :                
+SW[3]                        : B21       : input  : 2.5 V             :         : 7A        : N              
+saida_rom[13]                : B22       : output : 2.5 V             :         : 7A        : N              
 GND                          : C1        :        :                   :         : B1L       :                
 GND                          : C2        :        :                   :         : B1L       :                
 GND                          : C3        : gnd    :                   :         :           :                
@@ -170,20 +170,20 @@ GND                          : C4        : gnd    :                   :         
 GND                          : C5        :        :                   :         : 9A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8A        :                
 VCCIO8A                      : C7        : power  :                   : 2.5V    : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8A        :                
-funct_out[4]                 : C9        : output : 2.5 V             :         : 8A        : N              
+saida_rom[23]                : C8        : output : 2.5 V             :         : 8A        : N              
+SW[2]                        : C9        : input  : 2.5 V             :         : 8A        : N              
 VCCPD7A8A                    : C10       : power  :                   : 2.5V    : 7A, 8A    :                
-SW[1]                        : C11       : input  : 2.5 V             :         : 7A        : N              
+saida_regA[5]                : C11       : output : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : C12       : power  :                   : 2.5V    : 7A        :                
-saida_rom[22]                : C13       : output : 2.5 V             :         : 7A        : N              
+SW[5]                        : C13       : input  : 2.5 V             :         : 7A        : N              
 VREFB7AN0                    : C14       : power  :                   :         : 7A        :                
-saida_ula[11]                : C15       : output : 2.5 V             :         : 7A        : N              
-saida_regA[6]                : C16       : output : 2.5 V             :         : 7A        : N              
+saida_regA[18]               : C15       : output : 2.5 V             :         : 7A        : N              
+uc_entrada_ula[0]            : C16       : output : 2.5 V             :         : 7A        : N              
 GND                          : C17       : gnd    :                   :         :           :                
-saida_ula[18]                : C18       : output : 2.5 V             :         : 7A        : N              
-op_code_out[5]               : C19       : output : 2.5 V             :         : 7A        : N              
-saida_rom[9]                 : C20       : output : 2.5 V             :         : 7A        : N              
-saida_pc[21]                 : C21       : output : 2.5 V             :         : 7A        : N              
+saida_rom[11]                : C18       : output : 2.5 V             :         : 7A        : N              
+saida_rom[17]                : C19       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 7A        :                
+funct_out[4]                 : C21       : output : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : C22       : power  :                   : 2.5V    : 7A        :                
 GND                          : D1        : gnd    :                   :         :           :                
 GND                          : D2        : gnd    :                   :         :           :                
@@ -191,88 +191,88 @@ GXB_NC                       : D3        :        :                   :         
 GXB_NC                       : D4        :        :                   :         : B1L       :                
 GND                          : D5        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8A        :                
+SW[4]                        : D7        : input  : 2.5 V             :         : 8A        : N              
 VCCPD7A8A                    : D8        : power  :                   : 2.5V    : 7A, 8A    :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 8A        :                
+saida_ula[27]                : D9        : output : 2.5 V             :         : 8A        : N              
 GND                          : D10       : gnd    :                   :         :           :                
 VCC_AUX                      : D11       : power  :                   : 2.5V    :           :                
 saida_rom[1]                 : D12       : output : 2.5 V             :         : 7A        : N              
-saida_regA[10]               : D13       : output : 2.5 V             :         : 7A        : N              
+saida_regA[29]               : D13       : output : 2.5 V             :         : 7A        : N              
 VCCPD7A8A                    : D14       : power  :                   : 2.5V    : 7A, 8A    :                
 VCCIO7A                      : D15       : power  :                   : 2.5V    : 7A        :                
 VCCPD7A8A                    : D16       : power  :                   : 2.5V    : 7A, 8A    :                
-saida_rom[26]                : D17       : output : 2.5 V             :         : 7A        : N              
+palavra_controle_out[8]      : D17       : output : 2.5 V             :         : 7A        : N              
 VCC_AUX                      : D18       : power  :                   : 2.5V    :           :                
-saida_pc[28]                 : D19       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 7A        :                
 GND                          : D20       : gnd    :                   :         :           :                
-palavra_controle_out[8]      : D21       : output : 2.5 V             :         : 7A        : N              
-saida_pc[19]                 : D22       : output : 2.5 V             :         : 7A        : N              
+KEY[2]                       : D21       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7A        :                
 GXB_NC                       : E1        :        :                   :         : B1L       :                
 GXB_NC                       : E2        :        :                   :         : B1L       :                
 GND                          : E3        : gnd    :                   :         :           :                
 GND                          : E4        : gnd    :                   :         :           :                
 MSEL3                        : E5        :        :                   :         : 9A        :                
 VCC_AUX                      : E6        : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8A        :                
+SW[8]                        : E7        : input  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : E8        : power  :                   : 2.5V    : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 8A        :                
+saida_ula[30]                : E9        : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 8A        :                
 VCCPD7A8A                    : E11       : power  :                   : 2.5V    : 7A, 8A    :                
-saida_ula[28]                : E12       : output : 2.5 V             :         : 7A        : N              
+saida_regA[15]               : E12       : output : 2.5 V             :         : 7A        : N              
 GND                          : E13       : gnd    :                   :         :           :                
-saida_regA[23]               : E14       : output : 2.5 V             :         : 7A        : N              
-saida_regA[8]                : E15       : output : 2.5 V             :         : 7A        : N              
-saida_rom[29]                : E16       : output : 2.5 V             :         : 7A        : N              
+op_code_out[1]               : E14       : output : 2.5 V             :         : 7A        : N              
+op_code_out[0]               : E15       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E16       :        :                   :         : 7A        :                
 DNU                          : E17       :        :                   :         :           :                
 VCCIO7A                      : E18       : power  :                   : 2.5V    : 7A        :                
-saida_regA[4]                : E19       : output : 2.5 V             :         : 7A        : N              
-saida_rom[10]                : E20       : output : 2.5 V             :         : 7A        : N              
-palavra_controle_out[6]      : E21       : output : 2.5 V             :         : 7A        : N              
-saida_pc[12]                 : E22       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 7A        :                
+saida_regA[13]               : E20       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E21       :        :                   :         : 7A        :                
+saida_rom[28]                : E22       : output : 2.5 V             :         : 7A        : N              
 GND                          : F1        : gnd    :                   :         :           :                
 GND                          : F2        : gnd    :                   :         :           :                
 MSEL4                        : F3        :        :                   :         : 9A        :                
 VCCA_FPLL                    : F4        : power  :                   : 2.5V    :           :                
 GND                          : F5        :        :                   :         : B1L       :                
 GND                          : F6        : gnd    :                   :         :           :                
-SW[3]                        : F7        : input  : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8A        :                
 VCCPGM                       : F8        : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8A        :                
-saida_rom[28]                : F10       : output : 2.5 V             :         : 8A        : N              
+KEY[0]                       : F9        : input  : 2.5 V             :         : 8A        : N              
+saida_regA[22]               : F10       : output : 2.5 V             :         : 8A        : N              
 VCCIO7A                      : F11       : power  :                   : 2.5V    : 7A        :                
-saida_rom[17]                : F12       : output : 2.5 V             :         : 7A        : N              
-saida_ula[17]                : F13       : output : 2.5 V             :         : 7A        : N              
-saida_pc[4]                  : F14       : output : 2.5 V             :         : 7A        : N              
-saida_ula[24]                : F15       : output : 2.5 V             :         : 7A        : N              
+saida_regA[3]                : F12       : output : 2.5 V             :         : 7A        : N              
+saida_rom[8]                 : F13       : output : 2.5 V             :         : 7A        : N              
+palavra_controle_out[1]      : F14       : output : 2.5 V             :         : 7A        : N              
+saida_rom[24]                : F15       : output : 2.5 V             :         : 7A        : N              
 GND                          : F16       : gnd    :                   :         :           :                
 GND                          : F17       :        :                   :         : 7A        :                
-saida_pc[11]                 : F18       : output : 2.5 V             :         : 7A        : N              
-saida_pc[14]                 : F19       : output : 2.5 V             :         : 7A        : N              
-KEY[2]                       : F20       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 7A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 7A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 7A        :                
 VCCIO7A                      : F21       : power  :                   : 2.5V    : 7A        :                
-saida_ula[0]                 : F22       : output : 2.5 V             :         : 7A        : N              
+op_code_out[2]               : F22       : output : 2.5 V             :         : 7A        : N              
 GND                          : G1        :        :                   :         : B1L       :                
 GND                          : G2        :        :                   :         : B1L       :                
 GND                          : G3        : gnd    :                   :         :           :                
 GND                          : G4        :        :                   :         : B1L       :                
 nCE                          : G5        :        :                   :         : 9A        :                
-SW[8]                        : G6        : input  : 2.5 V             :         : 8A        : N              
+saida_rom[20]                : G6        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : G7        : power  :                   : 2.5V    : 8A        :                
-uc_entrada_ula[1]            : G8        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 8A        :                
 GND                          : G9        : gnd    :                   :         :           :                
-saida_rom[2]                 : G10       : output : 2.5 V             :         : 8A        : N              
-saida_regA[24]               : G11       : output : 2.5 V             :         : 7A        : N              
-saida_rom[18]                : G12       : output : 2.5 V             :         : 7A        : N              
-saida_rom[23]                : G13       : output : 2.5 V             :         : 7A        : N              
+saida_pc[2]                  : G10       : output : 2.5 V             :         : 8A        : N              
+flag_zero_out                : G11       : output : 2.5 V             :         : 7A        : N              
+saida_pc[29]                 : G12       : output : 2.5 V             :         : 7A        : N              
+palavra_controle_out[0]      : G13       : output : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : G14       : power  :                   : 2.5V    : 7A        :                
-saida_rom[25]                : G15       : output : 2.5 V             :         : 7A        : N              
-saida_ula[23]                : G16       : output : 2.5 V             :         : 7A        : N              
-op_code_out[0]               : G17       : output : 2.5 V             :         : 7A        : N              
-saida_rom[27]                : G18       : output : 2.5 V             :         : 7A        : N              
+saida_ula[0]                 : G15       : output : 2.5 V             :         : 7A        : N              
+saida_rom[26]                : G16       : output : 2.5 V             :         : 7A        : N              
+palavra_controle_out[6]      : G17       : output : 2.5 V             :         : 7A        : N              
+saida_rom[14]                : G18       : output : 2.5 V             :         : 7A        : N              
 GND                          : G19       : gnd    :                   :         :           :                
-saida_pc[8]                  : G20       : output : 2.5 V             :         : 7A        : N              
-saida_regA[20]               : G21       : output : 2.5 V             :         : 7A        : N              
-saida_pc[31]                 : G22       : output : 2.5 V             :         : 7A        : N              
+saida_rom[18]                : G20       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G21       :        :                   :         : 7A        :                
+palavra_controle_out[3]      : G22       : output : 2.5 V             :         : 7A        : N              
 GND                          : H1        : gnd    :                   :         :           :                
 GND                          : H2        : gnd    :                   :         :           :                
 GND                          : H3        : gnd    :                   :         :           :                
@@ -280,20 +280,20 @@ GND                          : H4        : gnd    :                   :         
 nSTATUS                      : H5        :        :                   :         : 9A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H6        :        :                   :         : 8A        :                
 GND                          : H7        : gnd    :                   :         :           :                
-palavra_controle_out[1]      : H8        : output : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H9        :        :                   :         : 8A        :                
-saida_regB[25]               : H10       : output : 2.5 V             :         : 7A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H11       :        :                   :         : 7A        :                
+saida_pc[8]                  : H8        : output : 2.5 V             :         : 8A        : N              
+saida_pc[3]                  : H9        : output : 2.5 V             :         : 8A        : N              
+saida_regA[31]               : H10       : output : 2.5 V             :         : 7A        : N              
+saida_pc[6]                  : H11       : output : 2.5 V             :         : 7A        : N              
 GND                          : H12       : gnd    :                   :         :           :                
-saida_pc[20]                 : H13       : output : 2.5 V             :         : 7A        : N              
-saida_ula[12]                : H14       : output : 2.5 V             :         : 7A        : N              
-saida_regA[13]               : H15       : output : 2.5 V             :         : 7A        : N              
-saida_rom[13]                : H16       : output : 2.5 V             :         : 7A        : N              
+saida_rom[10]                : H13       : output : 2.5 V             :         : 7A        : N              
+saida_ula[14]                : H14       : output : 2.5 V             :         : 7A        : N              
+FPGA_RESET_N                 : H15       : input  : 2.5 V             :         : 7A        : N              
+saida_rom[12]                : H16       : output : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : H17       : power  :                   : 2.5V    : 7A        :                
-saida_ula[1]                 : H18       : output : 2.5 V             :         : 7A        : N              
+op_code_out[3]               : H18       : output : 2.5 V             :         : 7A        : N              
 VCCA_FPLL                    : H19       : power  :                   : 2.5V    :           :                
-SW[0]                        : H20       : input  : 2.5 V             :         : 7A        : N              
-SW[5]                        : H21       : input  : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 7A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 7A        :                
 GND                          : H22       : gnd    :                   :         :           :                
 GXB_NC                       : J1        :        :                   :         : B1L       :                
 GXB_NC                       : J2        :        :                   :         : B1L       :                
@@ -301,52 +301,52 @@ GND                          : J3        : gnd    :                   :         
 VCCE_GXBL                    : J4        : power  :                   : 1.1V    :           :                
 GND                          : J5        : gnd    :                   :         :           :                
 MSEL1                        : J6        :        :                   :         : 9A        :                
-saida_pc[1]                  : J7        : output : 2.5 V             :         : 8A        : N              
-KEY[1]                       : J8        : input  : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :         : 8A        :                
+saida_ula[23]                : J7        : output : 2.5 V             :         : 8A        : N              
+saida_rom[16]                : J8        : output : 2.5 V             :         : 8A        : N              
+saida_pc[19]                 : J9        : output : 2.5 V             :         : 8A        : N              
 VCC                          : J10       : power  :                   : 1.1V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J11       :        :                   :         : 7A        :                
 VCC                          : J12       : power  :                   : 1.1V    :           :                
-saida_rom[8]                 : J13       : output : 2.5 V             :         : 7A        : N              
+op_code_out[4]               : J13       : output : 2.5 V             :         : 7A        : N              
 VCC                          : J14       : power  :                   : 1.1V    :           :                
 GND                          : J15       : gnd    :                   :         :           :                
 VCC                          : J16       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J17       :        :                   :         : 7A        :                
-saida_regA[21]               : J18       : output : 2.5 V             :         : 7A        : N              
-op_code_out[1]               : J19       : output : 2.5 V             :         : 7A        : N              
+saida_pc[0]                  : J17       : output : 2.5 V             :         : 7A        : N              
+saida_rom[29]                : J18       : output : 2.5 V             :         : 7A        : N              
+saida_rom[31]                : J19       : output : 2.5 V             :         : 7A        : N              
 GND                          : J20       : gnd    :                   :         :           :                
-saida_pc[26]                 : J21       : output : 2.5 V             :         : 7A        : N              
-saida_pc[23]                 : J22       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J21       :        :                   :         : 7A        :                
+SW[0]                        : J22       : input  : 2.5 V             :         : 7A        : N              
 GND                          : K1        : gnd    :                   :         :           :                
 GND                          : K2        : gnd    :                   :         :           :                
 VCCL_GXBL                    : K3        : power  :                   : 1.1V    :           :                
 GND                          : K4        : gnd    :                   :         :           :                
 VCCE_GXBL                    : K5        : power  :                   : 1.1V    :           :                
 CONF_DONE                    : K6        :        :                   :         : 9A        :                
-saida_regA[11]               : K7        : output : 2.5 V             :         : 8A        : N              
+saida_regA[30]               : K7        : output : 2.5 V             :         : 8A        : N              
 GND                          : K8        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K9        :        :                   :         : 7A        :                
+saida_regA[11]               : K9        : output : 2.5 V             :         : 7A        : N              
 GND                          : K10       : gnd    :                   :         :           :                
 VCC                          : K11       : power  :                   : 1.1V    :           :                
 GND                          : K12       : gnd    :                   :         :           :                
 VCC                          : K13       : power  :                   : 1.1V    :           :                
 GND                          : K14       : gnd    :                   :         :           :                
 VCC                          : K15       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 7A        :                
-saida_regA[31]               : K17       : output : 2.5 V             :         : 5B        : N              
+op_code_out[5]               : K16       : output : 2.5 V             :         : 7A        : N              
+saida_pc[14]                 : K17       : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : K18       : power  :                   : 2.5V    : 5B        :                
-KEY[0]                       : K19       : input  : 2.5 V             :         : 7A        : N              
-saida_ula[27]                : K20       : output : 2.5 V             :         : 7A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 5B        :                
-saida_pc[10]                 : K22       : output : 2.5 V             :         : 5B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 7A        :                
+saida_rom[22]                : K20       : output : 2.5 V             :         : 7A        : N              
+saida_pc[11]                 : K21       : output : 2.5 V             :         : 5B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K22       :        :                   :         : 5B        :                
 GND                          : L1        :        :                   :         : B1L       :                
 GND                          : L2        :        :                   :         : B1L       :                
 GND                          : L3        : gnd    :                   :         :           :                
 VCCE_GXBL                    : L4        : power  :                   : 1.1V    :           :                
 GND                          : L5        : gnd    :                   :         :           :                
 MSEL0                        : L6        :        :                   :         : 9A        :                
-funct_out[1]                 : L7        : output : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 7A        :                
+saida_ula[21]                : L7        : output : 2.5 V             :         : 8A        : N              
+saida_ula[28]                : L8        : output : 2.5 V             :         : 7A        : N              
 DNU                          : L9        :        :                   :         :           :                
 VCC                          : L10       : power  :                   : 1.1V    :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -355,20 +355,20 @@ GND                          : L13       : gnd    :                   :         
 VCC                          : L14       : power  :                   : 1.1V    :           :                
 GND                          : L15       : gnd    :                   :         :           :                
 VCC                          : L16       : power  :                   : 1.1V    :           :                
-saida_pc[29]                 : L17       : output : 2.5 V             :         : 5B        : N              
-saida_ula[13]                : L18       : output : 2.5 V             :         : 5B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L19       :        :                   :         : 5B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L17       :        :                   :         : 5B        :                
+saida_regA[10]               : L18       : output : 2.5 V             :         : 5B        : N              
+saida_pc[15]                 : L19       : output : 2.5 V             :         : 5B        : N              
 VREFB5BN0                    : L20       : power  :                   :         : 5B        :                
 GND                          : L21       : gnd    :                   :         :           :                
-saida_pc[27]                 : L22       : output : 2.5 V             :         : 5B        : N              
+saida_ula[17]                : L22       : output : 2.5 V             :         : 5B        : N              
 GND                          : M1        : gnd    :                   :         :           :                
 GND                          : M2        : gnd    :                   :         :           :                
 VCCH_GXBL                    : M3        : power  :                   : 2.5V    :           :                
 GND                          : M4        : gnd    :                   :         :           :                
 TDO                          : M5        : output :                   :         : 3A        :                
-funct_out[3]                 : M6        : output : 2.5 V             :         : 3A        : N              
-FPGA_RESET_N                 : M7        : input  : 2.5 V             :         : 3A        : N              
-saida_regA[5]                : M8        : output : 2.5 V             :         : 3B        : N              
+saida_regA[27]               : M6        : output : 2.5 V             :         : 3A        : N              
+saida_pc[25]                 : M7        : output : 2.5 V             :         : 3A        : N              
+saida_rom[3]                 : M8        : output : 2.5 V             :         : 3B        : N              
 CLOCK_50                     : M9        : input  : 3.3-V LVTTL       :         : 3B        : Y              
 GND                          : M10       : gnd    :                   :         :           :                
 VCC                          : M11       : power  :                   : 1.1V    :           :                
@@ -376,144 +376,144 @@ GND                          : M12       : gnd    :                   :         
 VCC                          : M13       : power  :                   : 1.1V    :           :                
 GND                          : M14       : gnd    :                   :         :           :                
 VCC                          : M15       : power  :                   : 1.1V    :           :                
-saida_regB[23]               : M16       : output : 2.5 V             :         : 5B        : N              
+saida_regA[9]                : M16       : output : 2.5 V             :         : 5B        : N              
 VCCPD5B                      : M17       : power  :                   : 2.5V    : 5B        :                
-saida_regA[30]               : M18       : output : 2.5 V             :         : 5B        : N              
+saida_regA[12]               : M18       : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : M19       : power  :                   : 2.5V    : 5B        :                
-saida_pc[9]                  : M20       : output : 2.5 V             :         : 5B        : N              
-saida_regA[29]               : M21       : output : 2.5 V             :         : 5B        : N              
-saida_regA[26]               : M22       : output : 2.5 V             :         : 5B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M20       :        :                   :         : 5B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 5B        :                
+saida_regA[16]               : M22       : output : 2.5 V             :         : 5B        : N              
 GXB_NC                       : N1        :        :                   :         : B0L       :                
 GXB_NC                       : N2        :        :                   :         : B0L       :                
 GND                          : N3        : gnd    :                   :         :           :                
 VCCE_GXBL                    : N4        : power  :                   : 1.1V    :           :                
 GND                          : N5        : gnd    :                   :         :           :                
-SW[4]                        : N6        : input  : 2.5 V             :         : 3A        : N              
+saida_regB[8]                : N6        : output : 2.5 V             :         : 3A        : N              
 GND                          : N7        : gnd    :                   :         :           :                
-saida_pc[22]                 : N8        : output : 2.5 V             :         : 3B        : N              
-saida_rom[24]                : N9        : output : 2.5 V             :         : 3B        : N              
+saida_regA[4]                : N8        : output : 2.5 V             :         : 3B        : N              
+saida_pc[31]                 : N9        : output : 2.5 V             :         : 3B        : N              
 VCC                          : N10       : power  :                   : 1.1V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
 VCC                          : N12       : power  :                   : 1.1V    :           :                
 GND                          : N13       : gnd    :                   :         :           :                
 VCC                          : N14       : power  :                   : 1.1V    :           :                
 GND                          : N15       : gnd    :                   :         :           :                
-saida_pc[13]                 : N16       : output : 2.5 V             :         : 5B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5B        :                
 GND                          : N17       : gnd    :                   :         :           :                
 VCCPD5B                      : N18       : power  :                   : 2.5V    : 5B        :                
-saida_regA[7]                : N19       : output : 2.5 V             :         : 5B        : N              
-saida_pc[18]                 : N20       : output : 2.5 V             :         : 5B        : N              
-saida_rom[30]                : N21       : output : 2.5 V             :         : 5B        : N              
+saida_ula[16]                : N19       : output : 2.5 V             :         : 5B        : N              
+saida_regA[2]                : N20       : output : 2.5 V             :         : 5B        : N              
+palavra_controle_out[4]      : N21       : output : 2.5 V             :         : 5B        : N              
 GND                          : N22       : gnd    :                   :         :           :                
 GND                          : P1        : gnd    :                   :         :           :                
 GND                          : P2        : gnd    :                   :         :           :                
 VCCL_GXBL                    : P3        : power  :                   : 1.1V    :           :                
 GND                          : P4        : gnd    :                   :         :           :                
 TMS                          : P5        : input  :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P7        :        :                   :         : 3A        :                
-saida_regA[25]               : P8        : output : 2.5 V             :         : 3B        : N              
-palavra_controle_out[9]      : P9        : output : 2.5 V             :         : 3B        : N              
+saida_regA[8]                : P6        : output : 2.5 V             :         : 3A        : N              
+saida_ula[29]                : P7        : output : 2.5 V             :         : 3A        : N              
+saida_pc[18]                 : P8        : output : 2.5 V             :         : 3B        : N              
+saida_regA[23]               : P9        : output : 2.5 V             :         : 3B        : N              
 GND                          : P10       : gnd    :                   :         :           :                
 VCC                          : P11       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P12       :        :                   :         : 3B        :                
+operacao_out[1]              : P12       : output : 2.5 V             :         : 3B        : N              
 VCC                          : P13       : power  :                   : 1.1V    :           :                
-saida_regB[22]               : P14       : output : 2.5 V             :         : 4A        : N              
+saida_regB[18]               : P14       : output : 2.5 V             :         : 4A        : N              
 VCC                          : P15       : power  :                   : 1.1V    :           :                
-saida_pc[17]                 : P16       : output : 2.5 V             :         : 5A        : N              
-saida_regB[21]               : P17       : output : 2.5 V             :         : 5A        : N              
-operacao_out[2]              : P18       : output : 2.5 V             :         : 5A        : N              
-saida_pc[6]                  : P19       : output : 2.5 V             :         : 5A        : N              
+saida_ula[8]                 : P16       : output : 2.5 V             :         : 5A        : N              
+saida_pc[28]                 : P17       : output : 2.5 V             :         : 5A        : N              
+operacao_out[0]              : P18       : output : 2.5 V             :         : 5A        : N              
+saida_regB[4]                : P19       : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : P20       : power  :                   : 2.5V    : 5A        :                
 VCCPD5A                      : P21       : power  :                   : 2.5V    : 5A        :                
-saida_regB[20]               : P22       : output : 2.5 V             :         : 5A        : N              
+saida_pc[24]                 : P22       : output : 2.5 V             :         : 5A        : N              
 GND                          : R1        :        :                   :         : B0L       :                
 GND                          : R2        :        :                   :         : B0L       :                
 GND                          : R3        : gnd    :                   :         :           :                
 nCSO, DATA4                  : R4        :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 3A        :                
-saida_rom[3]                 : R7        : output : 2.5 V             :         : 3A        : N              
+saida_pc[10]                 : R7        : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : R8        : power  :                   : 2.5V    : 3B        :                
-saida_rom[4]                 : R9        : output : 2.5 V             :         : 3B        : N              
-saida_ula[16]                : R10       : output : 2.5 V             :         : 3B        : N              
-saida_regB[6]                : R11       : output : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 3B        :                
+saida_ula[19]                : R9        : output : 2.5 V             :         : 3B        : N              
+saida_pc[26]                 : R10       : output : 2.5 V             :         : 3B        : N              
+saida_ula[12]                : R11       : output : 2.5 V             :         : 3B        : N              
+saida_pc[7]                  : R12       : output : 2.5 V             :         : 3B        : N              
 GND                          : R13       : gnd    :                   :         :           :                
-saida_regB[15]               : R14       : output : 2.5 V             :         : 4A        : N              
-saida_rom[16]                : R15       : output : 2.5 V             :         : 5A        : N              
-saida_rom[19]                : R16       : output : 2.5 V             :         : 5A        : N              
-saida_pc[2]                  : R17       : output : 2.5 V             :         : 5A        : N              
+saida_regB[28]               : R14       : output : 2.5 V             :         : 4A        : N              
+saida_regB[17]               : R15       : output : 2.5 V             :         : 5A        : N              
+saida_ula[7]                 : R16       : output : 2.5 V             :         : 5A        : N              
+saida_regB[19]               : R17       : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : R18       : power  :                   : 2.5V    : 5A        :                
 VCCPGM                       : R19       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VREFB5AN0                    : R20       : power  :                   :         : 5A        :                
-saida_regB[12]               : R21       : output : 2.5 V             :         : 5A        : N              
-saida_ula[4]                 : R22       : output : 2.5 V             :         : 5A        : N              
+saida_ula[6]                 : R21       : output : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R22       :        :                   :         : 5A        :                
 GND                          : T1        : gnd    :                   :         :           :                
 GND                          : T2        : gnd    :                   :         :           :                
 VCCH_GXBL                    : T3        : power  :                   : 2.5V    :           :                
 AS_DATA3, DATA3              : T4        :        :                   :         : 3A        :                
 VCCA_FPLL                    : T5        : power  :                   : 2.5V    :           :                
 VCCIO3A                      : T6        : power  :                   : 2.5V    : 3A        :                
-saida_ula[10]                : T7        : output : 2.5 V             :         : 3A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 3A        :                
-saida_regA[14]               : T9        : output : 2.5 V             :         : 3B        : N              
-op_code_out[3]               : T10       : output : 2.5 V             :         : 3B        : N              
+saida_regA[14]               : T7        : output : 2.5 V             :         : 3A        : N              
+saida_ula[26]                : T8        : output : 2.5 V             :         : 3A        : N              
+palavra_controle_out[9]      : T9        : output : 2.5 V             :         : 3B        : N              
+saida_pc[4]                  : T10       : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : T11       : power  :                   : 2.5V    : 3B        :                
-saida_regB[3]                : T12       : output : 2.5 V             :         : 4A        : N              
-saida_rom[0]                 : T13       : output : 2.5 V             :         : 4A        : N              
-operacao_out[0]              : T14       : output : 2.5 V             :         : 4A        : N              
-saida_regA[16]               : T15       : output : 2.5 V             :         : 5A        : N              
+saida_regB[12]               : T12       : output : 2.5 V             :         : 4A        : N              
+palavra_controle_out[5]      : T13       : output : 2.5 V             :         : 4A        : N              
+saida_ula[2]                 : T14       : output : 2.5 V             :         : 4A        : N              
+saida_regB[1]                : T15       : output : 2.5 V             :         : 5A        : N              
 GND                          : T16       : gnd    :                   :         :           :                
-saida_ula[6]                 : T17       : output : 2.5 V             :         : 5A        : N              
-saida_regA[2]                : T18       : output : 2.5 V             :         : 5A        : N              
-saida_rom[21]                : T19       : output : 2.5 V             :         : 5A        : N              
-saida_regB[26]               : T20       : output : 2.5 V             :         : 5A        : N              
+saida_regA[17]               : T17       : output : 2.5 V             :         : 5A        : N              
+saida_ula[10]                : T18       : output : 2.5 V             :         : 5A        : N              
+saida_regA[1]                : T19       : output : 2.5 V             :         : 5A        : N              
+saida_pc[9]                  : T20       : output : 2.5 V             :         : 5A        : N              
 GND                          : T21       : gnd    :                   :         :           :                
-palavra_controle_out[5]      : T22       : output : 2.5 V             :         : 5A        : N              
+saida_regB[3]                : T22       : output : 2.5 V             :         : 5A        : N              
 GXB_NC                       : U1        :        :                   :         : B0L       :                
 GXB_NC                       : U2        :        :                   :         : B0L       :                
 GND                          : U3        : gnd    :                   :         :           :                
 GND                          : U4        :        :                   :         : B0L       :                
 GND                          : U5        : gnd    :                   :         :           :                
-SW[2]                        : U6        : input  : 2.5 V             :         : 3A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 3A        :                
-KEY[3]                       : U8        : input  : 2.5 V             :         : 3A        : N              
+saida_ula[15]                : U6        : output : 2.5 V             :         : 3A        : N              
+saida_regA[6]                : U7        : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U8        :        :                   :         : 3A        :                
 GND                          : U9        : gnd    :                   :         :           :                
-saida_pc[5]                  : U10       : output : 2.5 V             :         : 3B        : N              
-saida_regB[18]               : U11       : output : 2.5 V             :         : 3B        : N              
-saida_ula[30]                : U12       : output : 2.5 V             :         : 3B        : N              
-saida_regA[22]               : U13       : output : 2.5 V             :         : 4A        : N              
+saida_ula[22]                : U10       : output : 2.5 V             :         : 3B        : N              
+operacao_out[2]              : U11       : output : 2.5 V             :         : 3B        : N              
+saida_rom[19]                : U12       : output : 2.5 V             :         : 3B        : N              
+saida_rom[21]                : U13       : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : U14       : power  :                   : 2.5V    : 4A        :                
-palavra_controle_out[7]      : U15       : output : 2.5 V             :         : 4A        : N              
-saida_regB[10]               : U16       : output : 2.5 V             :         : 4A        : N              
-saida_regA[3]                : U17       : output : 2.5 V             :         : 4A        : N              
+saida_regB[5]                : U15       : output : 2.5 V             :         : 4A        : N              
+saida_ula[18]                : U16       : output : 2.5 V             :         : 4A        : N              
+saida_pc[1]                  : U17       : output : 2.5 V             :         : 4A        : N              
 VCCA_FPLL                    : U18       : power  :                   : 2.5V    :           :                
 VCCIO4A                      : U19       : power  :                   : 2.5V    : 4A        :                
-saida_ula[31]                : U20       : output : 2.5 V             :         : 4A        : N              
-operacao_out[1]              : U21       : output : 2.5 V             :         : 4A        : N              
-saida_ula[25]                : U22       : output : 2.5 V             :         : 4A        : N              
+saida_ula[1]                 : U20       : output : 2.5 V             :         : 4A        : N              
+saida_rom[7]                 : U21       : output : 2.5 V             :         : 4A        : N              
+saida_ula[31]                : U22       : output : 2.5 V             :         : 4A        : N              
 GND                          : V1        : gnd    :                   :         :           :                
 GND                          : V2        : gnd    :                   :         :           :                
 DCLK                         : V3        :        :                   :         : 3A        :                
 GND                          : V4        :        :                   :         : B0L       :                
 TCK                          : V5        : input  :                   :         : 3A        :                
-saida_regA[18]               : V6        : output : 2.5 V             :         : 3A        : N              
+saida_ula[9]                 : V6        : output : 2.5 V             :         : 3A        : N              
 GND                          : V7        : gnd    :                   :         :           :                
 VCCPGM                       : V8        : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-saida_regB[24]               : V9        : output : 2.5 V             :         : 3B        : N              
-flag_zero_out                : V10       : output : 2.5 V             :         : 3B        : N              
+saida_pc[13]                 : V9        : output : 2.5 V             :         : 3B        : N              
+saida_regA[25]               : V10       : output : 2.5 V             :         : 3B        : N              
 DNU                          : V11       :        :                   :         :           :                
 GND                          : V12       : gnd    :                   :         :           :                
-funct_out[2]                 : V13       : output : 2.5 V             :         : 4A        : N              
-saida_regB[2]                : V14       : output : 2.5 V             :         : 4A        : N              
-saida_ula[2]                 : V15       : output : 2.5 V             :         : 4A        : N              
-saida_pc[7]                  : V16       : output : 2.5 V             :         : 4A        : N              
+saida_regA[20]               : V13       : output : 2.5 V             :         : 4A        : N              
+saida_regB[11]               : V14       : output : 2.5 V             :         : 4A        : N              
+saida_ula[5]                 : V15       : output : 2.5 V             :         : 4A        : N              
+saida_ula[3]                 : V16       : output : 2.5 V             :         : 4A        : N              
 GND                          : V17       : gnd    :                   :         :           :                
-saida_ula[29]                : V18       : output : 2.5 V             :         : 4A        : N              
-saida_regB[16]               : V19       : output : 2.5 V             :         : 4A        : N              
-saida_regB[9]                : V20       : output : 2.5 V             :         : 4A        : N              
-saida_regB[1]                : V21       : output : 2.5 V             :         : 4A        : N              
+saida_regB[13]               : V18       : output : 2.5 V             :         : 4A        : N              
+KEY[3]                       : V19       : input  : 2.5 V             :         : 4A        : N              
+saida_regB[25]               : V20       : output : 2.5 V             :         : 4A        : N              
+palavra_controle_out[2]      : V21       : output : 2.5 V             :         : 4A        : N              
 GND                          : V22       : gnd    :                   :         :           :                
 GND                          : W1        :        :                   :         : B0L       :                
 GND                          : W2        :        :                   :         : B0L       :                
@@ -522,21 +522,21 @@ GND                          : W4        : gnd    :                   :         
 TDI                          : W5        : input  :                   :         : 3A        :                
 VCCPD3A                      : W6        : power  :                   : 2.5V    : 3A        :                
 VCC_AUX                      : W7        : power  :                   : 2.5V    :           :                
-saida_ula[20]                : W8        : output : 2.5 V             :         : 3A        : N              
-SW[7]                        : W9        : input  : 2.5 V             :         : 3A        : N              
+saida_ula[24]                : W8        : output : 2.5 V             :         : 3A        : N              
+saida_ula[11]                : W9        : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : W10       : power  :                   : 2.5V    : 3B        :                
 VCCPD3B4A                    : W11       : power  :                   : 2.5V    : 3B, 4A    :                
 VCCPD3B4A                    : W12       : power  :                   : 2.5V    : 3B, 4A    :                
 VCC_AUX                      : W13       : power  :                   : 2.5V    :           :                
 VCCPD3B4A                    : W14       : power  :                   : 2.5V    : 3B, 4A    :                
 VCCIO4A                      : W15       : power  :                   : 2.5V    : 4A        :                
-saida_ula[3]                 : W16       : output : 2.5 V             :         : 4A        : N              
+saida_regB[2]                : W16       : output : 2.5 V             :         : 4A        : N              
 VCCPD3B4A                    : W17       : power  :                   : 2.5V    : 3B, 4A    :                
 VCC_AUX                      : W18       : power  :                   : 2.5V    :           :                
-saida_regB[19]               : W19       : output : 2.5 V             :         : 4A        : N              
+saida_regB[30]               : W19       : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : W20       : power  :                   : 2.5V    : 4A        :                
-saida_ula[7]                 : W21       : output : 2.5 V             :         : 4A        : N              
-saida_ula[5]                 : W22       : output : 2.5 V             :         : 4A        : N              
+saida_regA[21]               : W21       : output : 2.5 V             :         : 4A        : N              
+saida_regB[0]                : W22       : output : 2.5 V             :         : 4A        : N              
 GND                          : Y1        : gnd    :                   :         :           :                
 GND                          : Y2        : gnd    :                   :         :           :                
 GXB_NC                       : Y3        :        :                   :         : B0L       :                
@@ -545,17 +545,17 @@ GND                          : Y5        : gnd    :                   :         
 DNU                          : Y6        :        :                   :         :           :                
 VREFB3AN0                    : Y7        : power  :                   :         : 3A        :                
 VCCIO3A                      : Y8        : power  :                   : 2.5V    : 3A        :                
-saida_regA[15]               : Y9        : output : 2.5 V             :         : 3B        : N              
-saida_rom[6]                 : Y10       : output : 2.5 V             :         : 3B        : N              
-saida_regB[17]               : Y11       : output : 2.5 V             :         : 3B        : N              
+saida_pc[5]                  : Y9        : output : 2.5 V             :         : 3B        : N              
+saida_pc[20]                 : Y10       : output : 2.5 V             :         : 3B        : N              
+saida_pc[23]                 : Y11       : output : 2.5 V             :         : 3B        : N              
 VREFB3BN0                    : Y12       : power  :                   :         : 3B        :                
 VCCIO3B                      : Y13       : power  :                   : 2.5V    : 3B        :                
-palavra_controle_out[3]      : Y14       : output : 2.5 V             :         : 4A        : N              
-saida_ula[8]                 : Y15       : output : 2.5 V             :         : 4A        : N              
-saida_ula[21]                : Y16       : output : 2.5 V             :         : 4A        : N              
-saida_regB[13]               : Y17       : output : 2.5 V             :         : 4A        : N              
+funct_out[2]                 : Y14       : output : 2.5 V             :         : 4A        : N              
+saida_rom[0]                 : Y15       : output : 2.5 V             :         : 4A        : N              
+saida_regB[27]               : Y16       : output : 2.5 V             :         : 4A        : N              
+saida_regB[21]               : Y17       : output : 2.5 V             :         : 4A        : N              
 GND                          : Y18       : gnd    :                   :         :           :                
 saida_regB[31]               : Y19       : output : 2.5 V             :         : 4A        : N              
-saida_regB[11]               : Y20       : output : 2.5 V             :         : 4A        : N              
-saida_regB[5]                : Y21       : output : 2.5 V             :         : 4A        : N              
-saida_regB[4]                : Y22       : output : 2.5 V             :         : 4A        : N              
+saida_regB[6]                : Y20       : output : 2.5 V             :         : 4A        : N              
+saida_regB[9]                : Y21       : output : 2.5 V             :         : 4A        : N              
+saida_regB[15]               : Y22       : output : 2.5 V             :         : 4A        : N              

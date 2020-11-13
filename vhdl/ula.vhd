@@ -21,16 +21,10 @@ end entity;
 
 architecture comportamento of ula is
 
-    constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
-
-    signal soma :       STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-    signal subtracao :  STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-    signal operacao_and :     STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-    signal operacao_or :      STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-    signal operacao_xor :     STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-    signal operacao_not :     STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-    signal operacao_slt :     std_logic_vector((larguraDados-1) downto 0);
-    signal temp_saida : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+    signal temp_saida       : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+    signal saida_b_not_b    : std_logic_vector((larguraDados-1) downto 0);
+    signal saida_adder    : std_logic_vector((larguraDados-1) downto 0);
+    signal saida_overflow : std_logic;
 
     CONSTANT op_and     : std_logic_vector(2 DOWNTO 0) := "000";
 	CONSTANT op_or      : std_logic_vector(2 DOWNTO 0) := "001";
@@ -40,27 +34,45 @@ architecture comportamento of ula is
 
     begin
         
-        soma            <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
-        subtracao       <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
-        operacao_slt    <= STD_LOGIC_VECTOR(to_unsigned(1, larguraDados)) WHEN unsigned(entradaA) < unsigned(entradaB) ELSE (OTHERS => '0');
 
-        operacao_and    <= entradaA and entradaB;
-        operacao_or     <= entradaA or entradaB;
-        operacao_xor    <= entradaA xor entradaB;
-        operacao_not    <= not entradaA;
+        mux_b_not_b : ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => larguraDados
+        )
+        PORT MAP(
+            entradaA_MUX => entradaB,
+            entradaB_MUX => not entradaB,
+            seletor_MUX  => seletor(2),
+            saida_MUX    => saida_b_not_b
+        );
 
-        temp_saida <= soma when (seletor = op_add) else
-                      subtracao when (seletor = op_sub) else
-                      operacao_slt when (seletor = op_slt) else
-                      -- entradaA when  (seletor = "000010") else
-                      -- entradaB when  (seletor = "000011") else
-                      -- operacao_xor when    (seletor = "000100") else
-                      -- operacao_not when    (seletor = "000101") else
-                      operacao_and when    (seletor = op_and) else
-                      operacao_or when     (seletor = op_or) else
-                      (OTHERS => 'Z');  
+        zupper_adder : ENTITY work.add_32
+            GENERIC MAP (
+                DATA_WIDTH => larguraDados
+            )
+            PORT MAP(
+                entradaA  => entradaA,
+                entradaB  => saida_b_not_b,
+                carry_in  => seletor(2),
+                saida     => saida_adder,
+                overflow  => saida_overflow
+            );
 
-        flag_zero <= '1' WHEN unsigned(temp_saida) = unsigned(zero) ELSE '0';
+        mux_ula : ENTITY work.mux_4x1
+            GENERIC MAP(
+                DATA_WIDTH => larguraDados
+            )
+            PORT MAP(
+                -- Inputs ports
+                entradaA => (entradaA AND saida_b_not_b),
+                entradaB => (entradaA OR saida_b_not_b),
+                entradaC => (saida_adder), 
+                entradaD => ("0000000000000000000000000000000" & (saida_overflow XOR saida_adder(larguraDados - 1))),
+                seletor  => seletor(1 DOWNTO 0),
+                saida    => temp_saida
+            ); 
+
+        flag_zero <= '1' WHEN unsigned(temp_saida) = 0 ELSE '0';
         saida <= temp_saida;
 
 end architecture;
