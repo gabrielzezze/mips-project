@@ -1,5 +1,5 @@
-Analysis & Elaboration report for mips-project
-Fri Nov 13 18:00:35 2020
+Analysis & Synthesis report for mips-project
+Fri Nov 20 16:30:18 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -7,34 +7,48 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |mips_project
-  5. Parameter Settings for User Entity Instance: unidade_controle:unidade_controle
-  6. Parameter Settings for User Entity Instance: fluxo_dados:FD
-  7. Parameter Settings for User Entity Instance: fluxo_dados:FD|registrador_generico:PC
-  8. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_prox_PC
-  9. Parameter Settings for User Entity Instance: fluxo_dados:FD|soma_constante:somaQuatro
- 10. Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:soma_proxPC_imedShift2
- 11. Parameter Settings for User Entity Instance: fluxo_dados:FD|extende_sinal:extende_imediato
- 12. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_proxPC_soma_proxPCImedShift2
- 13. Parameter Settings for User Entity Instance: fluxo_dados:FD|rom_mips:ROM
- 14. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_rd_rt
- 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|banco_registradores:banco_registradores
- 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaRegB_imedExt
- 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|unidade_controle_ula:uc_ula
- 18. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula
- 19. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_generico_2x1:mux_b_not_b
- 20. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|add_32:zupper_adder
- 21. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_4x1:mux_ula
- 22. Parameter Settings for User Entity Instance: fluxo_dados:FD|ram_mips:ram
- 23. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_RAM
- 24. Analysis & Elaboration Settings
- 25. Port Connectivity Checks: "fluxo_dados:FD|ula:ula|mux_4x1:mux_ula"
- 26. Port Connectivity Checks: "fluxo_dados:FD|somador:soma_proxPC_imedShift2"
- 27. Port Connectivity Checks: "fluxo_dados:FD|mux_generico_2x1:mux_prox_PC"
- 28. Port Connectivity Checks: "fluxo_dados:FD|registrador_generico:PC"
- 29. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |mips_project
+ 13. Parameter Settings for User Entity Instance: unidade_controle:unidade_controle
+ 14. Parameter Settings for User Entity Instance: fluxo_dados:FD
+ 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|registrador_generico:PC
+ 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_4x1:mux_prox_PC_regA
+ 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|soma_constante:somaQuatro
+ 18. Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:soma_proxPC_imedShift2
+ 19. Parameter Settings for User Entity Instance: fluxo_dados:FD|extende_sinal:extende_imediato
+ 20. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_proxPC_soma_proxPCImedShift2
+ 21. Parameter Settings for User Entity Instance: fluxo_dados:FD|rom_mips:ROM
+ 22. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_rd_rt
+ 23. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_RdRt_31
+ 24. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_PC4
+ 25. Parameter Settings for User Entity Instance: fluxo_dados:FD|banco_registradores:banco_registradores
+ 26. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaRegB_imedExt
+ 27. Parameter Settings for User Entity Instance: fluxo_dados:FD|unidade_controle_ula:uc_ula
+ 28. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula
+ 29. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_generico_2x1:mux_b_not_b
+ 30. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|add_32:zupper_adder
+ 31. Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_4x1:mux_ula
+ 32. Parameter Settings for User Entity Instance: fluxo_dados:FD|ram_mips:ram
+ 33. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_RAM
+ 34. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_RAM_imediato_ui
+ 35. Port Connectivity Checks: "fluxo_dados:FD|mux_generico_2x1:mux_RAM_imediato_ui"
+ 36. Port Connectivity Checks: "fluxo_dados:FD|ula:ula|mux_4x1:mux_ula"
+ 37. Port Connectivity Checks: "fluxo_dados:FD|mux_generico_2x1:mux_RdRt_31"
+ 38. Port Connectivity Checks: "fluxo_dados:FD|somador:soma_proxPC_imedShift2"
+ 39. Port Connectivity Checks: "fluxo_dados:FD|mux_4x1:mux_prox_PC_regA"
+ 40. Port Connectivity Checks: "fluxo_dados:FD|registrador_generico:PC"
+ 41. Post-Synthesis Netlist Statistics for Top Partition
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
 
 
 
@@ -58,266 +72,31 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Fri Nov 13 18:00:35 2020       ;
-; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                 ; mips-project                                ;
-; Top-level Entity Name         ; mips_project                                ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |mips_project ;
-+------------------------+-------+---------------------------------------------+
-; Parameter Name         ; Value ; Type                                        ;
-+------------------------+-------+---------------------------------------------+
-; DATA_WIDTH             ; 32    ; Signed Integer                              ;
-; ADDR_WIDTH             ; 32    ; Signed Integer                              ;
-; TOTAL_WIDTH            ; 32    ; Signed Integer                              ;
-; PALAVRA_CONTROLE_WIDTH ; 10    ; Signed Integer                              ;
-; FUNCT_WIDTH            ; 6     ; Signed Integer                              ;
-; ULA_OP_WIDTH           ; 2     ; Signed Integer                              ;
-; SELETOR_ULA_WIDTH      ; 3     ; Signed Integer                              ;
-+------------------------+-------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: unidade_controle:unidade_controle ;
-+------------------------+-------+-----------------------------------------------+
-; Parameter Name         ; Value ; Type                                          ;
-+------------------------+-------+-----------------------------------------------+
-; palavra_controle_width ; 10    ; Signed Integer                                ;
-; ula_op_width           ; 2     ; Signed Integer                                ;
-+------------------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD ;
-+------------------------+-------+----------------------------+
-; Parameter Name         ; Value ; Type                       ;
-+------------------------+-------+----------------------------+
-; data_width             ; 32    ; Signed Integer             ;
-; addr_width             ; 32    ; Signed Integer             ;
-; total_width            ; 32    ; Signed Integer             ;
-; reg_width              ; 5     ; Signed Integer             ;
-; palavra_controle_width ; 10    ; Signed Integer             ;
-; imediato_width         ; 16    ; Signed Integer             ;
-; funct_width            ; 6     ; Signed Integer             ;
-; ula_op_width           ; 2     ; Signed Integer             ;
-; seletor_ula_width      ; 3     ; Signed Integer             ;
-+------------------------+-------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|registrador_generico:PC ;
-+----------------+-------+------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                       ;
-+----------------+-------+------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                             ;
-+----------------+-------+------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_prox_PC ;
-+----------------+-------+-----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                            ;
-+----------------+-------+-----------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                                  ;
-+----------------+-------+-----------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|soma_constante:somaQuatro ;
-+----------------+-------+--------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                         ;
-+----------------+-------+--------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                               ;
-; constante      ; 4     ; Signed Integer                                               ;
-+----------------+-------+--------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:soma_proxPC_imedShift2 ;
-+----------------+-------+-------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                              ;
-+----------------+-------+-------------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                                    ;
-+----------------+-------+-------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|extende_sinal:extende_imediato ;
-+--------------------+-------+---------------------------------------------------------------+
-; Parameter Name     ; Value ; Type                                                          ;
-+--------------------+-------+---------------------------------------------------------------+
-; larguradadoentrada ; 16    ; Signed Integer                                                ;
-; larguradadosaida   ; 32    ; Signed Integer                                                ;
-+--------------------+-------+---------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_proxPC_soma_proxPCImedShift2 ;
-+----------------+-------+--------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                 ;
-+----------------+-------+--------------------------------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                                                       ;
-+----------------+-------+--------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|rom_mips:ROM ;
-+-----------------+-------+------------------------------------------------+
-; Parameter Name  ; Value ; Type                                           ;
-+-----------------+-------+------------------------------------------------+
-; datawidth       ; 32    ; Signed Integer                                 ;
-; addrwidth       ; 32    ; Signed Integer                                 ;
-; memoryaddrwidth ; 6     ; Signed Integer                                 ;
-+-----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_rd_rt ;
-+----------------+-------+---------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                          ;
-+----------------+-------+---------------------------------------------------------------+
-; larguradados   ; 5     ; Signed Integer                                                ;
-+----------------+-------+---------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|banco_registradores:banco_registradores ;
-+---------------------+-------+-----------------------------------------------------------------------+
-; Parameter Name      ; Value ; Type                                                                  ;
-+---------------------+-------+-----------------------------------------------------------------------+
-; larguradados        ; 32    ; Signed Integer                                                        ;
-; larguraendbancoregs ; 5     ; Signed Integer                                                        ;
-+---------------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaRegB_imedExt ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                                            ;
-+----------------+-------+---------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|unidade_controle_ula:uc_ula ;
-+-------------------+-------+-------------------------------------------------------------+
-; Parameter Name    ; Value ; Type                                                        ;
-+-------------------+-------+-------------------------------------------------------------+
-; funct_width       ; 6     ; Signed Integer                                              ;
-; ula_op_width      ; 2     ; Signed Integer                                              ;
-; seletor_ula_width ; 3     ; Signed Integer                                              ;
-+-------------------+-------+-------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_generico_2x1:mux_b_not_b ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                    ;
-+----------------+-------+-------------------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                                          ;
-+----------------+-------+-------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|add_32:zupper_adder ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; data_width     ; 32    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_4x1:mux_ula ;
-+----------------+-------+------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                       ;
-+----------------+-------+------------------------------------------------------------+
-; data_width     ; 32    ; Signed Integer                                             ;
-+----------------+-------+------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|ram_mips:ram ;
-+-----------------+-------+------------------------------------------------+
-; Parameter Name  ; Value ; Type                                           ;
-+-----------------+-------+------------------------------------------------+
-; datawidth       ; 32    ; Signed Integer                                 ;
-; addrwidth       ; 32    ; Signed Integer                                 ;
-; memoryaddrwidth ; 6     ; Signed Integer                                 ;
-+-----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_RAM ;
-+----------------+-------+----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                 ;
-+----------------+-------+----------------------------------------------------------------------+
-; larguradados   ; 32    ; Signed Integer                                                       ;
-+----------------+-------+----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Nov 20 16:30:18 2020       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; mips-project                                ;
+; Top-level Entity Name           ; mips_project                                ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 2656                                        ;
+; Total pins                      ; 209                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -404,6 +183,933 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; add_32.vhd                       ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/add_32.vhd               ;         ;
+; mux_4x1.vhd                      ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/mux_4x1.vhd              ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/full_adder.vhd           ;         ;
+; unidade_controle_ula.vhd         ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/unidade_controle_ula.vhd ;         ;
+; ram_mips.vhdl                    ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/ram_mips.vhdl            ;         ;
+; extende_sinal.vhd                ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/extende_sinal.vhd        ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/somador.vhd              ;         ;
+; mips_project.vhd                 ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd         ;         ;
+; soma_constante.vhd               ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/soma_constante.vhd       ;         ;
+; registrador_generico.vhd         ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/registrador_generico.vhd ;         ;
+; rom_mips.vhd                     ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/rom_mips.vhd             ;         ;
+; banco_registradores.vhd          ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/banco_registradores.vhd  ;         ;
+; mux_generico_2x1.vhd             ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/mux_generico_2x1.vhd     ;         ;
+; unidade_controle.vhd             ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/unidade_controle.vhd     ;         ;
+; ula.vhd                          ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/ula.vhd                  ;         ;
+; fluxo_dados.vhd                  ; yes             ; User VHDL File  ; /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd          ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 2016           ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 1686           ;
+;     -- 7 input functions                    ; 9              ;
+;     -- 6 input functions                    ; 1143           ;
+;     -- 5 input functions                    ; 187            ;
+;     -- 4 input functions                    ; 80             ;
+;     -- <=3 input functions                  ; 267            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 2656           ;
+;                                             ;                ;
+; I/O pins                                    ; 209            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 2656           ;
+; Total fan-out                               ; 17091          ;
+; Average fan-out                             ; 3.59           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Entity Name          ; Library Name ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+----------------------+--------------+
+; |mips_project                                      ; 1686 (0)            ; 2656 (0)                  ; 0                 ; 0          ; 209  ; 0            ; |mips_project                                                                                 ; mips_project         ; work         ;
+;    |fluxo_dados:FD|                                ; 1673 (2)            ; 2656 (0)                  ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD                                                                  ; fluxo_dados          ; work         ;
+;       |banco_registradores:banco_registradores|    ; 517 (517)           ; 576 (576)                 ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|banco_registradores:banco_registradores                          ; banco_registradores  ; work         ;
+;       |mux_4x1:mux_prox_PC_regA|                   ; 85 (85)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|mux_4x1:mux_prox_PC_regA                                         ; mux_4x1              ; work         ;
+;       |mux_generico_2x1:mux_RdRt_31|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|mux_generico_2x1:mux_RdRt_31                                     ; mux_generico_2x1     ; work         ;
+;       |mux_generico_2x1:mux_saidaULA_PC4|          ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_PC4                                ; mux_generico_2x1     ; work         ;
+;       |ram_mips:ram|                               ; 800 (800)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ram_mips:ram                                                     ; ram_mips             ; work         ;
+;       |registrador_generico:PC|                    ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|registrador_generico:PC                                          ; registrador_generico ; work         ;
+;       |rom_mips:ROM|                               ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|rom_mips:ROM                                                     ; rom_mips             ; work         ;
+;       |soma_constante:somaQuatro|                  ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|soma_constante:somaQuatro                                        ; soma_constante       ; work         ;
+;       |somador:soma_proxPC_imedShift2|             ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|somador:soma_proxPC_imedShift2                                   ; somador              ; work         ;
+;       |ula:ula|                                    ; 132 (11)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula                                                          ; ula                  ; work         ;
+;          |add_32:zupper_adder|                     ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder                                      ; add_32               ; work         ;
+;             |full_adder:\somaBit1_31:10:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:10:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:11:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:11:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:13:soma_bits| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:13:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:14:soma_bits| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:14:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:15:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:15:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:16:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:16:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:18:soma_bits| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:18:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:19:soma_bits| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:19:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:1:soma_bits|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:1:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:21:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:21:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:23:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:23:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:24:soma_bits| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:24:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:26:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:26:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:28:soma_bits| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:28:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:29:soma_bits| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:29:soma_bits ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:3:soma_bits|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:3:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:4:soma_bits|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:4:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:5:soma_bits|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:5:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:6:soma_bits|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:6:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:8:soma_bits|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:8:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:\somaBit1_31:9:soma_bits|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:\somaBit1_31:9:soma_bits  ; full_adder           ; work         ;
+;             |full_adder:somaBit0|                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:somaBit0                  ; full_adder           ; work         ;
+;          |mux_4x1:mux_ula|                         ; 51 (51)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|mux_4x1:mux_ula                                          ; mux_4x1              ; work         ;
+;          |mux_generico_2x1:mux_b_not_b|            ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|ula:ula|mux_generico_2x1:mux_b_not_b                             ; mux_generico_2x1     ; work         ;
+;       |unidade_controle_ula:uc_ula|                ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|fluxo_dados:FD|unidade_controle_ula:uc_ula                                      ; unidade_controle_ula ; work         ;
+;    |unidade_controle:unidade_controle|             ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mips_project|unidade_controle:unidade_controle                                               ; unidade_controle     ; work         ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++-------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                           ; Reason for Removal                          ;
++-------------------------------------------------------------------------+---------------------------------------------+
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~613  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~677  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~581  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~645  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~869  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~933  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~837  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~901  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~582  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~646  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~550  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~614  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~838  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~902  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~806  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~870  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~583  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~647  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~551  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~615  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~839  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~903  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~807  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~871  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~584  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~648  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~552  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~616  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~840  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~904  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~808  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~872  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~585  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~649  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~553  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~617  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~841  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~905  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~809  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~873  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~586  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~650  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~554  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~618  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~842  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~906  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~810  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~874  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~587  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~651  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~555  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~619  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~843  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~907  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~811  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~875  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~588  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~652  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~556  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~620  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~844  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~908  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~812  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~876  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~589  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~653  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~557  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~621  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~845  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~909  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~813  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~877  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~590  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~654  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~558  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~622  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~846  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~910  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~814  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~878  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~591  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~655  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~559  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~623  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~847  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~911  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~815  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~879  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~592  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~656  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~560  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~624  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~848  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~912  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~816  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~880  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~593  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~657  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~561  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~625  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~849  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~913  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~817  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~881  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~594  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~658  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~562  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~626  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~850  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~914  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~818  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~882  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~595  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~659  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~563  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~627  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~851  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~915  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~819  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~883  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~596  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~660  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~564  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~628  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~852  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~916  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~820  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~884  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~597  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~661  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~565  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~629  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~853  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~917  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~821  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~885  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~598  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~662  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~566  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~630  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~854  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~918  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~822  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~886  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~599  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~663  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~567  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~631  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~855  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~919  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~823  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~887  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~600  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~664  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~568  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~632  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~856  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~920  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~824  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~888  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~601  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~665  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~569  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~633  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~857  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~921  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~825  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~889  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~602  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~666  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~570  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~634  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~858  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~922  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~826  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~890  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~603  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~667  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~571  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~635  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~859  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~923  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~827  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~891  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~604  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~668  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~572  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~636  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~860  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~924  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~828  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~892  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~605  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~669  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~573  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~637  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~861  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~925  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~829  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~893  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~606  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~670  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~574  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~638  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~862  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~926  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~830  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~894  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~607  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~671  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~575  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~639  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~863  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~927  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~831  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~895  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~608  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~672  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~576  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~640  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~864  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~928  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~832  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~896  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~609  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~673  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~577  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~641  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~865  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~929  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~833  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~897  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~610  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~674  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~578  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~642  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~866  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~930  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~834  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~898  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~611  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~675  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~579  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~643  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~867  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~931  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~835  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~899  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~612  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~676  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~580  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~644  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~868  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~932  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~836  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~900  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~421  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~165  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~549  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~293  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~390  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~134  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~518  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~262  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~391  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~135  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~519  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~263  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~392  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~136  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~520  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~264  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~393  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~137  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~521  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~265  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~394  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~138  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~522  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~266  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~395  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~139  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~523  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~267  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~396  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~140  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~524  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~268  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~397  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~141  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~525  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~269  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~398  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~142  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~526  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~270  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~399  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~143  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~527  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~271  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~400  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~144  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~528  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~272  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~401  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~145  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~529  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~273  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~402  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~146  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~530  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~274  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~403  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~147  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~531  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~275  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~404  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~148  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~532  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~276  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~405  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~149  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~533  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~277  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~406  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~150  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~534  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~278  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~407  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~151  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~535  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~279  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~408  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~152  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~536  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~280  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~409  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~153  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~537  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~281  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~410  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~154  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~538  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~282  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~411  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~155  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~539  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~283  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~412  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~156  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~540  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~284  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~413  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~157  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~541  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~285  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~414  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~158  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~542  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~286  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~415  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~159  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~543  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~287  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~416  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~160  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~544  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~288  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~417  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~161  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~545  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~289  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~418  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~162  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~546  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~290  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~419  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~163  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~547  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~291  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~420  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~164  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~548  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~292  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~773  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1029 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~742  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~998  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~743  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~999  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~744  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1000 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~745  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1001 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~746  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1002 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~747  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1003 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~748  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1004 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~749  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1005 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~750  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1006 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~751  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1007 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~752  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1008 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~753  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1009 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~754  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1010 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~755  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1011 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~756  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1012 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~757  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1013 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~758  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1014 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~759  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1015 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~760  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1016 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~761  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1017 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~762  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1018 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~763  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1019 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~764  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1020 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~765  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1021 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~766  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1022 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~767  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1023 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~768  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1024 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~769  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1025 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~770  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1026 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~771  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1027 ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~772  ; Stuck at GND due to stuck port clock_enable ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1028 ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 448                                 ;                                             ;
++-------------------------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                        ;
++------------------------------------------------------------------------+--------------------------------+--------------------------------------------------------------------------+
+; Register name                                                          ; Reason for Removal             ; Registers Removed due to This Register                                   ;
++------------------------------------------------------------------------+--------------------------------+--------------------------------------------------------------------------+
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~411 ; Stuck at GND                   ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~412,  ;
+;                                                                        ; due to stuck port clock_enable ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~156,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~540,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~284,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~415,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~159,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~543,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~287,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~417,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~161,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~545,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~289,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~418,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~162,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~546,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~290,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~419,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~163,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~547,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~291,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~420,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~164,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~548,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~292,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~773,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1029, ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~764,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1020, ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~767,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1023, ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~769,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1025, ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~770,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1026, ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~771,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1027, ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~772,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~1028  ;
+; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~421 ; Stuck at GND                   ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~390,  ;
+;                                                                        ; due to stuck port clock_enable ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~134,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~518,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~262,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~742,  ;
+;                                                                        ;                                ; fluxo_dados:FD|banco_registradores:banco_registradores|registrador~998   ;
++------------------------------------------------------------------------+--------------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2656  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2626  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |mips_project|fluxo_dados:FD|registrador_generico:PC|DOUT[0]                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |mips_project|fluxo_dados:FD|registrador_generico:PC|DOUT[31]                  ;
+; 5:1                ; 25 bits   ; 75 LEs        ; 50 LEs               ; 25 LEs                 ; Yes        ; |mips_project|fluxo_dados:FD|registrador_generico:PC|DOUT[17]                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |mips_project|fluxo_dados:FD|ula:ula|mux_generico_2x1:mux_b_not_b|saida_MUX[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mips_project|fluxo_dados:FD|mux_generico_2x1:mux_RdRt_31|saida_MUX[1]         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips_project|fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_PC4|saida_MUX[0]    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips_project|fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_PC4|saida_MUX[24]   ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |mips_project|fluxo_dados:FD|ula:ula|mux_4x1:mux_ula|saida[21]                 ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |mips_project|fluxo_dados:FD|unidade_controle_ula:uc_ula|seletor_ula[1]        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mips_project|unidade_controle:unidade_controle|palavraControle[0]             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |mips_project ;
++------------------------+-------+---------------------------------------------+
+; Parameter Name         ; Value ; Type                                        ;
++------------------------+-------+---------------------------------------------+
+; DATA_WIDTH             ; 32    ; Signed Integer                              ;
+; ADDR_WIDTH             ; 32    ; Signed Integer                              ;
+; TOTAL_WIDTH            ; 32    ; Signed Integer                              ;
+; PALAVRA_CONTROLE_WIDTH ; 15    ; Signed Integer                              ;
+; FUNCT_WIDTH            ; 6     ; Signed Integer                              ;
+; ULA_OP_WIDTH           ; 3     ; Signed Integer                              ;
+; SELETOR_ULA_WIDTH      ; 3     ; Signed Integer                              ;
++------------------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: unidade_controle:unidade_controle ;
++------------------------+-------+-----------------------------------------------+
+; Parameter Name         ; Value ; Type                                          ;
++------------------------+-------+-----------------------------------------------+
+; palavra_controle_width ; 15    ; Signed Integer                                ;
+; ula_op_width           ; 3     ; Signed Integer                                ;
++------------------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD ;
++------------------------+-------+----------------------------+
+; Parameter Name         ; Value ; Type                       ;
++------------------------+-------+----------------------------+
+; data_width             ; 32    ; Signed Integer             ;
+; addr_width             ; 32    ; Signed Integer             ;
+; total_width            ; 32    ; Signed Integer             ;
+; reg_width              ; 5     ; Signed Integer             ;
+; palavra_controle_width ; 15    ; Signed Integer             ;
+; imediato_width         ; 16    ; Signed Integer             ;
+; funct_width            ; 6     ; Signed Integer             ;
+; ula_op_width           ; 3     ; Signed Integer             ;
+; seletor_ula_width      ; 3     ; Signed Integer             ;
++------------------------+-------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|registrador_generico:PC ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_4x1:mux_prox_PC_regA ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|soma_constante:somaQuatro ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                               ;
+; constante      ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:soma_proxPC_imedShift2 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|extende_sinal:extende_imediato ;
++--------------------+-------+---------------------------------------------------------------+
+; Parameter Name     ; Value ; Type                                                          ;
++--------------------+-------+---------------------------------------------------------------+
+; larguradadoentrada ; 16    ; Signed Integer                                                ;
+; larguradadosaida   ; 32    ; Signed Integer                                                ;
++--------------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_proxPC_soma_proxPCImedShift2 ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|rom_mips:ROM ;
++-----------------+-------+------------------------------------------------+
+; Parameter Name  ; Value ; Type                                           ;
++-----------------+-------+------------------------------------------------+
+; datawidth       ; 32    ; Signed Integer                                 ;
+; addrwidth       ; 32    ; Signed Integer                                 ;
+; memoryaddrwidth ; 6     ; Signed Integer                                 ;
++-----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_rd_rt ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 5     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_RdRt_31 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; larguradados   ; 5     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_PC4 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|banco_registradores:banco_registradores ;
++---------------------+-------+-----------------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                                  ;
++---------------------+-------+-----------------------------------------------------------------------+
+; larguradados        ; 32    ; Signed Integer                                                        ;
+; larguraendbancoregs ; 5     ; Signed Integer                                                        ;
++---------------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaRegB_imedExt ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|unidade_controle_ula:uc_ula ;
++-------------------+-------+-------------------------------------------------------------+
+; Parameter Name    ; Value ; Type                                                        ;
++-------------------+-------+-------------------------------------------------------------+
+; funct_width       ; 6     ; Signed Integer                                              ;
+; ula_op_width      ; 3     ; Signed Integer                                              ;
+; seletor_ula_width ; 3     ; Signed Integer                                              ;
++-------------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_generico_2x1:mux_b_not_b ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|add_32:zupper_adder ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ula:ula|mux_4x1:mux_ula ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ram_mips:ram ;
++-----------------+-------+------------------------------------------------+
+; Parameter Name  ; Value ; Type                                           ;
++-----------------+-------+------------------------------------------------+
+; datawidth       ; 32    ; Signed Integer                                 ;
+; addrwidth       ; 32    ; Signed Integer                                 ;
+; memoryaddrwidth ; 6     ; Signed Integer                                 ;
++-----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_saidaULA_RAM ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux_generico_2x1:mux_RAM_imediato_ui ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|mux_generico_2x1:mux_RAM_imediato_ui" ;
++---------------------+-------+----------+----------------------------------------+
+; Port                ; Type  ; Severity ; Details                                ;
++---------------------+-------+----------+----------------------------------------+
+; entradab_mux[15..0] ; Input ; Info     ; Stuck at GND                           ;
++---------------------+-------+----------+----------------------------------------+
+
+
 +--------------------------------------------------------------------+
 ; Port Connectivity Checks: "fluxo_dados:FD|ula:ula|mux_4x1:mux_ula" ;
 +-----------------+-------+----------+-------------------------------+
@@ -411,6 +1117,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+-------------------------------+
 ; entradad[31..1] ; Input ; Info     ; Stuck at GND                  ;
 +-----------------+-------+----------+-------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|mux_generico_2x1:mux_RdRt_31" ;
++--------------+-------+----------+---------------------------------------+
+; Port         ; Type  ; Severity ; Details                               ;
++--------------+-------+----------+---------------------------------------+
+; entradab_mux ; Input ; Info     ; Stuck at VCC                          ;
++--------------+-------+----------+---------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -422,13 +1137,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------+---------------------------------------+
 
 
-+-------------------------------------------------------------------------+
-; Port Connectivity Checks: "fluxo_dados:FD|mux_generico_2x1:mux_prox_PC" ;
-+--------------------+-------+----------+---------------------------------+
-; Port               ; Type  ; Severity ; Details                         ;
-+--------------------+-------+----------+---------------------------------+
-; entradab_mux[1..0] ; Input ; Info     ; Stuck at GND                    ;
-+--------------------+-------+----------+---------------------------------+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|mux_4x1:mux_prox_PC_regA" ;
++----------------+-------+----------+---------------------------------+
+; Port           ; Type  ; Severity ; Details                         ;
++----------------+-------+----------+---------------------------------+
+; entradab[1..0] ; Input ; Info     ; Stuck at GND                    ;
+; entradad       ; Input ; Info     ; Stuck at GND                    ;
++----------------+-------+----------+---------------------------------+
 
 
 +--------------------------------------------------------------------+
@@ -441,14 +1157,53 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+----------------------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 2656                        ;
+;     ENA               ; 2626                        ;
+;     plain             ; 30                          ;
+; arriav_lcell_comb     ; 1693                        ;
+;     arith             ; 60                          ;
+;         1 data inputs ; 30                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 29                          ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
+;     normal            ; 1624                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 199                         ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 51                          ;
+;         5 data inputs ; 187                         ;
+;         6 data inputs ; 1143                        ;
+; boundary_port         ; 209                         ;
+;                       ;                             ;
+; Max LUT depth         ; 20.00                       ;
+; Average LUT depth     ; 8.56                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov 13 18:00:27 2020
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips-project -c mips-project --analysis_and_elaboration
+    Info: Processing started: Fri Nov 20 16:30:03 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mips-project -c mips-project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file add_32.vhd
@@ -505,25 +1260,60 @@ Info (12021): Found 2 design units, including 1 entities, in source file fluxo_d
 Info (12127): Elaborating entity "mips_project" for the top level hierarchy
 Info (12128): Elaborating entity "unidade_controle" for hierarchy "unidade_controle:unidade_controle" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 64
 Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 77
-Info (12128): Elaborating entity "registrador_generico" for hierarchy "fluxo_dados:FD|registrador_generico:PC" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 77
-Info (12128): Elaborating entity "mux_generico_2x1" for hierarchy "fluxo_dados:FD|mux_generico_2x1:mux_prox_PC" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 89
-Info (12128): Elaborating entity "soma_constante" for hierarchy "fluxo_dados:FD|soma_constante:somaQuatro" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 100
-Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:soma_proxPC_imedShift2" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 110
-Info (12128): Elaborating entity "extende_sinal" for hierarchy "fluxo_dados:FD|extende_sinal:extende_imediato" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 120
-Info (12128): Elaborating entity "rom_mips" for hierarchy "fluxo_dados:FD|rom_mips:ROM" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 141
+Info (12128): Elaborating entity "registrador_generico" for hierarchy "fluxo_dados:FD|registrador_generico:PC" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 84
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "fluxo_dados:FD|mux_4x1:mux_prox_PC_regA" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 96
+Info (12128): Elaborating entity "soma_constante" for hierarchy "fluxo_dados:FD|soma_constante:somaQuatro" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 109
+Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:soma_proxPC_imedShift2" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 119
+Info (12128): Elaborating entity "extende_sinal" for hierarchy "fluxo_dados:FD|extende_sinal:extende_imediato" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 129
+Info (12128): Elaborating entity "mux_generico_2x1" for hierarchy "fluxo_dados:FD|mux_generico_2x1:mux_proxPC_soma_proxPCImedShift2" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 139
+Info (12128): Elaborating entity "rom_mips" for hierarchy "fluxo_dados:FD|rom_mips:ROM" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 150
 Warning (10541): VHDL Signal Declaration warning at rom_mips.vhd(24): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/gabrielzezze/Desktop/mips-project/vhdl/rom_mips.vhd Line: 24
-Info (12128): Elaborating entity "mux_generico_2x1" for hierarchy "fluxo_dados:FD|mux_generico_2x1:mux_rd_rt" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 153
-Info (12128): Elaborating entity "banco_registradores" for hierarchy "fluxo_dados:FD|banco_registradores:banco_registradores" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 164
-Info (12128): Elaborating entity "unidade_controle_ula" for hierarchy "fluxo_dados:FD|unidade_controle_ula:uc_ula" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 192
-Info (12128): Elaborating entity "ula" for hierarchy "fluxo_dados:FD|ula:ula" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 204
+Info (12128): Elaborating entity "mux_generico_2x1" for hierarchy "fluxo_dados:FD|mux_generico_2x1:mux_rd_rt" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 162
+Info (12128): Elaborating entity "banco_registradores" for hierarchy "fluxo_dados:FD|banco_registradores:banco_registradores" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 195
+Info (12128): Elaborating entity "unidade_controle_ula" for hierarchy "fluxo_dados:FD|unidade_controle_ula:uc_ula" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 222
+Info (12128): Elaborating entity "ula" for hierarchy "fluxo_dados:FD|ula:ula" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 234
 Info (12128): Elaborating entity "add_32" for hierarchy "fluxo_dados:FD|ula:ula|add_32:zupper_adder" File: /home/gabrielzezze/Desktop/mips-project/vhdl/ula.vhd Line: 49
 Info (12128): Elaborating entity "full_adder" for hierarchy "fluxo_dados:FD|ula:ula|add_32:zupper_adder|full_adder:somaBit0" File: /home/gabrielzezze/Desktop/mips-project/vhdl/add_32.vhd Line: 24
-Info (12128): Elaborating entity "mux_4x1" for hierarchy "fluxo_dados:FD|ula:ula|mux_4x1:mux_ula" File: /home/gabrielzezze/Desktop/mips-project/vhdl/ula.vhd Line: 61
-Info (12128): Elaborating entity "ram_mips" for hierarchy "fluxo_dados:FD|ram_mips:ram" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 216
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 835 megabytes
-    Info: Processing ended: Fri Nov 13 18:00:35 2020
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:22
+Info (12128): Elaborating entity "ram_mips" for hierarchy "fluxo_dados:FD|ram_mips:ram" File: /home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd Line: 246
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276007): RAM logic "fluxo_dados:FD|ram_mips:ram|memRAM" is uninferred due to asynchronous read logic File: /home/gabrielzezze/Desktop/mips-project/vhdl/ram_mips.vhdl Line: 21
+    Info (276007): RAM logic "fluxo_dados:FD|banco_registradores:banco_registradores|registrador" is uninferred due to asynchronous read logic File: /home/gabrielzezze/Desktop/mips-project/vhdl/banco_registradores.vhd Line: 71
+    Info (276004): RAM logic "fluxo_dados:FD|rom_mips:ROM|memROM" is uninferred due to inappropriate RAM size File: /home/gabrielzezze/Desktop/mips-project/vhdl/rom_mips.vhd Line: 24
+Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: /home/gabrielzezze/Desktop/mips-project/vhdl/rom_content.mif Line: 1
+    Warning (113026): Memory Initialization File Address 16 is not initialized File: /home/gabrielzezze/Desktop/mips-project/vhdl/rom_content.mif Line: 1
+    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: /home/gabrielzezze/Desktop/mips-project/vhdl/rom_content.mif Line: 1
+    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: /home/gabrielzezze/Desktop/mips-project/vhdl/rom_content.mif Line: 1
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "op_code_out[4]" is stuck at GND File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 40
+    Warning (13410): Pin "saida_rom[20]" is stuck at GND File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 41
+    Warning (13410): Pin "saida_rom[30]" is stuck at GND File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 41
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 33
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 35
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 35
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 35
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 35
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd Line: 37
+Info (21057): Implemented 4508 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 193 output pins
+    Info (21061): Implemented 4299 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 579 megabytes
+    Info: Processing ended: Fri Nov 20 16:30:18 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
 
 

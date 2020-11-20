@@ -1,8 +1,8 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work mips-project.vho
-vcom -work work Waveform7.vwf.vht
-vsim  -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.mips_project_vhd_vec_tst
+vcom -work work Waveform8.vwf.vht
+vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.mips_project_vhd_vec_tst
 vcd file -direction mips-project.msim.vcd
 vcd add -internal mips_project_vhd_vec_tst/*
 vcd add -internal mips_project_vhd_vec_tst/i1/*
@@ -15,4 +15,5 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 

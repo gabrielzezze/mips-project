@@ -9,7 +9,7 @@ ENTITY fluxo_dados IS
         ADDR_WIDTH      : NATURAL := 32;
         TOTAL_WIDTH     : NATURAL := 32;
         REG_WIDTH       : NATURAL := 5;
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 11;
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 15;
         IMEDIATO_WIDTH   : NATURAL := 16;
         FUNCT_WIDTH      : NATURAL := 6;
         ULA_OP_WIDTH     : NATURAL := 3;
@@ -53,20 +53,24 @@ ARCHITECTURE main OF fluxo_dados IS
 
     SIGNAL seletor_ula_local : std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0);
 
+    signal saida_mux_RdRt_31          : std_logic_vector((REG_WIDTH - 1) DOWNTO 0);
+    signal saida_mux_ula_PCplus4      : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+
     ALIAS opCodeLocal                 : std_logic_vector(5 DOWNTO 0) IS Instrucao(31 DOWNTO 26);
     ALIAS functLocal                  : std_logic_vector(5 DOWNTO 0) IS Instrucao(5 DOWNTO 0);
 
-	ALIAS muxRAM_ImediatoUI           : std_logic IS palavraControle(11);
-	ALIAS BNE                         : std_logic IS palavraControle(10);
-    ALIAS muxProxPC                   : std_logic IS palavraControle(9);
-	ALIAS muxULA_imediato	          : std_logic IS palavraControle(8);
-	ALIAS hab_escrita_RAM	          : std_logic IS palavraControle(7);
-	ALIAS hab_leitura_RAM 	          : std_logic IS palavraControle(6);
-    ALIAS muxRT_imediato	          : std_logic IS palavraControle(5);
-	ALIAS BEQ                         : std_logic IS palavraControle(4);
-    ALIAS muxRdRt			          : std_logic IS palavraControle(3);
-    ALIAS escritaReg                  : std_logic IS palavraControle(2);
-    ALIAS uc_ula_op                   : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) IS palavraControle(1 DOWNTO 0);
+	ALIAS is_jal_op            : std_logic IS palavraControle(14);
+	ALIAS muxRAM_ImediatoUI    : std_logic IS palavraControle(13);
+	ALIAS BNE                  : std_logic IS palavraControle(12);
+	ALIAS muxProxPC            : std_logic_vector(1 downto 0) IS palavraControle(11 downto 10);
+	ALIAS muxULA_imediato	   : std_logic IS palavraControle(9);
+	ALIAS hab_escrita_RAM	   : std_logic IS palavraControle(8);
+	ALIAS hab_leitura_RAM 	   : std_logic IS palavraControle(7);
+	ALIAS muxRT_imediato	   : std_logic IS palavraControle(6);
+	ALIAS BEQ                  : std_logic IS palavraControle(5);
+	ALIAS muxRdRt			   : std_logic IS palavraControle(4);
+    ALIAS escritaReg           : std_logic IS palavraControle(3);
+    ALIAS uc_ula_op            : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) IS palavraControle(2 DOWNTO 0);
 
     ALIAS RS                          : std_logic_vector(4 DOWNTO 0) IS Instrucao(25 DOWNTO 21);
     ALIAS RT                          : std_logic_vector(4 DOWNTO 0) IS Instrucao(20 DOWNTO 16);
@@ -89,15 +93,17 @@ BEGIN
             RST    => '0'
         );
 
-    mux_prox_PC : ENTITY work.mux_generico_2x1
+    mux_prox_PC_regA : ENTITY work.mux_4x1
         GENERIC MAP(
-            larguraDados => ADDR_WIDTH
+            DATA_WIDTH => ADDR_WIDTH
         )
         PORT MAP(
-            entradaA_MUX => saidaMux_proxPC_somaImedProxPC,
-            entradaB_MUX => (SomaUm_MuxProxPC(31 downto 28) & (Instrucao(25 downto 0) & "00")),
-            seletor_MUX  => muxProxPC,
-            saida_MUX    => MuxProxPC_PC
+            entradaA => saidaMux_proxPC_somaImedProxPC,
+            entradaB => (SomaUm_MuxProxPC(31 downto 28) & (Instrucao(25 downto 0) & "00")),
+            entradaC => saidaRegA,
+            entradaD => (OTHERS => '0'),
+            seletor  => muxProxPC,
+            saida    => MuxProxPC_PC
         );
 
     somaQuatro : ENTITY work.soma_constante
@@ -164,6 +170,28 @@ BEGIN
             saida_MUX    => saidaMux_Rt_Rd
         );
 
+    mux_RdRt_31: ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => REG_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => saidaMux_Rt_Rd,
+            entradaB_MUX => "11111",
+            seletor_MUX  => is_jal_op,
+            saida_MUX    => saida_mux_RdRt_31
+        );
+        
+    mux_saidaULA_PC4: ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => DATA_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => saida_mux_saidaULA_RAM_imediatoUI,
+            entradaB_MUX => SomaUm_MuxProxPC,
+            seletor_MUX  => is_jal_op,
+            saida_MUX    => saida_mux_ula_PCplus4
+        );
+
     banco_registradores: ENTITY work.banco_registradores
         GENERIC MAP (
             larguraDados        => DATA_WIDTH,
@@ -173,10 +201,9 @@ BEGIN
             clk             => clk,
             enderecoA       => RS,
             enderecoB       => RT,
-            enderecoC       => saidaMux_Rt_Rd,
-            dadoEscritaC    => saida_mux_saidaULA_RAM_imediatoUI,
+            enderecoC       => saida_mux_RdRt_31,
+            dadoEscritaC    => saida_mux_ula_PCplus4,
             escreveC        => escritaReg,
-
             saidaA          => saidaRegA,
             saidaB          => saidaRegB
         );

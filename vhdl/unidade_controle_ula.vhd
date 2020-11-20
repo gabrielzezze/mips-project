@@ -29,6 +29,7 @@ ARCHITECTURE main OF unidade_controle_ula IS
     CONSTANT ula_op_funct           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "010";
     CONSTANT ula_op_and           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "011";
     CONSTANT ula_op_or           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "100";
+    CONSTANT ula_op_slt           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "101";
 
 
     CONSTANT funct_add      : std_logic_vector(5 DOWNTO 0) := "100000";
@@ -61,6 +62,7 @@ BEGIN
                             seletor_ula_sub WHEN (uc_ula_op = ula_op_sub) ELSE
                             seletor_ula_and WHEN (uc_ula_op = ula_op_and) ELSE
                             seletor_ula_or WHEN (uc_ula_op = ula_op_or) ELSE
+                            seletor_ula_slt WHEN (uc_ula_op = ula_op_slt) ELSE
                             seletor_funct_ula WHEN (uc_ula_op = ula_op_funct) ELSE
                             (OTHERS => '0');
 

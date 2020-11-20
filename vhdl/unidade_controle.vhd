@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY unidade_controle IS
     GENERIC (
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 11;
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 15;
 		ULA_OP_WIDTH     : NATURAL := 3
     );
 
@@ -32,17 +32,18 @@ ARCHITECTURE main OF unidade_controle IS
 
 	-- ALIASES --
 	-- Usados para facilitar a montagem da palavra controle. --
-	ALIAS muxRAM_ImediatoUI            : std_logic IS palavraControle(11);
-	ALIAS BNE                  : std_logic IS palavraControle(10);
-	ALIAS muxProxPC            : std_logic IS palavraControle(9);
-	ALIAS muxULA_imediato	   : std_logic IS palavraControle(8);
-	ALIAS hab_escrita_RAM	   : std_logic IS palavraControle(7);
-	ALIAS hab_leitura_RAM 	   : std_logic IS palavraControle(6);
-	ALIAS muxRT_imediato	   : std_logic IS palavraControle(5);
-	ALIAS BEQ                  : std_logic IS palavraControle(4);
-	ALIAS muxRdRt			   : std_logic IS palavraControle(3);
-    ALIAS escritaReg           : std_logic IS palavraControle(2);
-    ALIAS uc_ula_op            : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) IS palavraControle(1 DOWNTO 0);
+	ALIAS is_jal_op            : std_logic IS palavraControle(14);
+	ALIAS muxRAM_ImediatoUI    : std_logic IS palavraControle(13);
+	ALIAS BNE                  : std_logic IS palavraControle(12);
+	ALIAS muxProxPC            : std_logic_vector(1 downto 0) IS palavraControle(11 downto 10);
+	ALIAS muxULA_imediato	   : std_logic IS palavraControle(9);
+	ALIAS hab_escrita_RAM	   : std_logic IS palavraControle(8);
+	ALIAS hab_leitura_RAM 	   : std_logic IS palavraControle(7);
+	ALIAS muxRT_imediato	   : std_logic IS palavraControle(6);
+	ALIAS BEQ                  : std_logic IS palavraControle(5);
+	ALIAS muxRdRt			   : std_logic IS palavraControle(4);
+    ALIAS escritaReg           : std_logic IS palavraControle(3);
+    ALIAS uc_ula_op            : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) IS palavraControle(2 DOWNTO 0);
 	
 
 	-- CONSTANTS --
@@ -60,13 +61,16 @@ ARCHITECTURE main OF unidade_controle IS
 	CONSTANT op_code_slti : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001010";
 	CONSTANT op_code_bne : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000101";
 	CONSTANT op_code_lui : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001111";
+	CONSTANT op_code_jal : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000011";
 
     CONSTANT ula_op_add             : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "000";
     CONSTANT ula_op_sub             : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "001";
     CONSTANT ula_op_funct           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "010";
     CONSTANT ula_op_and           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "011";
     CONSTANT ula_op_or           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "100";
+	CONSTANT ula_op_slt           : std_logic_vector((ULA_OP_WIDTH - 1) DOWNTO 0) := "101";
 
+	CONSTANT jr_funct              : std_logic_vector(5 DOWNTO 0) := "001000";
 
 	-- SINAIS --
 	-- Pontos de controle concatenados (palavra controle).
@@ -101,7 +105,8 @@ BEGIN
 							 opCode = op_code_addi OR
 							 opCode = op_code_andi OR
 							 opCode = op_code_ori OR
-							 opCode = op_code_slti) 
+							 opCode = op_code_slti OR
+							 opCode = op_code_jal) 
 							ELSE '0';
 	muxRdRt     <=  '1' WHEN NOT inst_i ELSE '0';
 	muxRT_imediato <= (inst_i AND NOT(BEQ) AND NOT(BNE));
@@ -109,13 +114,17 @@ BEGIN
 	hab_escrita_RAM <= '1' WHEN (opcode = op_code_store) ELSE '0';
 	hab_leitura_RAM <= '1' WHEN (opcode = op_code_load) ELSE '0';
 	muxRAM_ImediatoUI <= '1' WHEN (opcode = op_code_lui) ELSE '0';
-	muxProxPC <= '1' WHEN (opCode = op_code_jump) ELSE '0';
+	muxProxPC <= "01" WHEN (opCode = op_code_jump OR opCode = op_code_jal) else
+				 "10" WHEN (opCode = op_code_r AND funct = jr_funct)
+				  ELSE "00";
+	is_jal_op <= '1' WHEN (opCode = op_code_jal) ELSE '0';
 
 	uc_ula_op <= ula_op_funct WHEN (opCode = op_code_r) ELSE 
 				 ula_op_add WHEN (opCode = op_code_load OR opCode = op_code_store OR opCode = op_code_addi) ELSE 
-				 ula_op_sub WHEN (opCode = op_code_beq OR opCode = op_code_slti OR opCode = op_code_bne) else
+				 ula_op_sub WHEN (opCode = op_code_beq OR opCode = op_code_bne) else
 				 ula_op_and WHEN (opCode = op_code_andi) else
 				 ula_op_or WHEN (opCode = op_code_ori) else
+				 ula_op_slt WHEN (opCode = op_code_slti) else
 				 (OTHERS => '0');
 	
 	

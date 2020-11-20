@@ -1,5 +1,5 @@
 Flow report for mips-project
-Fri Nov 13 18:00:45 2020
+Fri Nov 20 16:33:50 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Fri Nov 13 18:00:45 2020       ;
-; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name               ; mips-project                                ;
-; Top-level Entity Name       ; mips_project                                ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CGXFC7C7F23C8                              ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Fri Nov 20 16:33:50 2020       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; mips-project                                ;
+; Top-level Entity Name           ; mips_project                                ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CGXFC7C7F23C8                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 1,617 / 56,480 ( 3 % )                      ;
+; Total registers                 ; 2784                                        ;
+; Total pins                      ; 209 / 268 ( 78 % )                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/13/2020 18:00:27 ;
+; Start date & time ; 11/20/2020 16:30:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mips-project        ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 121372605844.160530122706924           ; --            ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 121372605844.160590060417948           ; --            ; --           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
@@ -96,34 +101,46 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 835 MB              ; 00:00:22                           ;
-; EDA Netlist Writer     ; 00:00:02     ; 1.0                     ; 727 MB              ; 00:00:01                           ;
-; EDA Netlist Writer     ; 00:00:01     ; 1.0                     ; 738 MB              ; 00:00:02                           ;
-; Total                  ; 00:00:11     ; --                      ; --                  ; 00:00:25                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 579 MB              ; 00:00:25                           ;
+; Fitter               ; 00:01:57     ; 1.2                     ; 2277 MB             ; 00:05:09                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 554 MB              ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:11     ; 2.5                     ; 1032 MB             ; 00:00:23                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 743 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 734 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 745 MB              ; 00:00:01                           ;
+; Total                ; 00:02:35     ; --                      ; --                  ; 00:06:07                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+------------------------+------------------+----------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+------------------------+------------------+----------------+------------+----------------+
-; Analysis & Elaboration ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
-; EDA Netlist Writer     ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
-; EDA Netlist Writer     ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
-+------------------------+------------------+----------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; Fitter               ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; Assembler            ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; Timing Analyzer      ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; EDA Netlist Writer   ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; EDA Netlist Writer   ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
+; EDA Netlist Writer   ; ubuntu           ; Ubuntu 18.04.5 ; 18         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off mips-project -c mips-project --analysis_and_elaboration
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips-project -c mips-project --vector_source=/home/gabrielzezze/Desktop/mips-project/vhdl/Waveform7.vwf --testbench_file=/home/gabrielzezze/Desktop/mips-project/vhdl/simulation/qsim/Waveform7.vwf.vht
+quartus_map --read_settings_files=on --write_settings_files=off mips-project -c mips-project
+quartus_fit --read_settings_files=off --write_settings_files=off mips-project -c mips-project
+quartus_asm --read_settings_files=off --write_settings_files=off mips-project -c mips-project
+quartus_sta mips-project -c mips-project
+quartus_eda --read_settings_files=off --write_settings_files=off mips-project -c mips-project
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mips-project -c mips-project --vector_source=/home/gabrielzezze/Desktop/mips-project/vhdl/Waveform8.vwf --testbench_file=/home/gabrielzezze/Desktop/mips-project/vhdl/simulation/qsim/Waveform8.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/gabrielzezze/Desktop/mips-project/vhdl/simulation/qsim/ mips-project -c mips-project
 
 

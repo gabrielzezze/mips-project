@@ -504,6 +504,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "saida_rom[18]",
+					"strict" : false
+				},
+				{
 					"name" : "saida_rom[19]",
 					"strict" : false
 				},
@@ -512,7 +516,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "saida_rom[22]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[23]",
+					"strict" : false
+				},
+				{
 					"name" : "saida_rom[24]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_rom[25]",
 					"strict" : false
 				},
 				{
@@ -533,6 +549,14 @@
 				},
 				{
 					"name" : "saida_rom[31]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_pc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_pc[1]",
 					"strict" : false
 				},
 				{
@@ -717,6 +741,26 @@
 				},
 				{
 					"name" : "palavra_controle_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "palavra_controle_out[14]",
 					"strict" : false
 				},
 				{
