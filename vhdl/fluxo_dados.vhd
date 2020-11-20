@@ -9,10 +9,10 @@ ENTITY fluxo_dados IS
         ADDR_WIDTH      : NATURAL := 32;
         TOTAL_WIDTH     : NATURAL := 32;
         REG_WIDTH       : NATURAL := 5;
-        PALAVRA_CONTROLE_WIDTH: NATURAL := 7;
+        PALAVRA_CONTROLE_WIDTH: NATURAL := 11;
         IMEDIATO_WIDTH   : NATURAL := 16;
         FUNCT_WIDTH      : NATURAL := 6;
-        ULA_OP_WIDTH     : NATURAL := 2;
+        ULA_OP_WIDTH     : NATURAL := 3;
         SELETOR_ULA_WIDTH : NATURAL := 3
     );
     PORT (
@@ -42,7 +42,8 @@ ARCHITECTURE main OF fluxo_dados IS
     SIGNAL saidaMux_Rt_Rd             : std_logic_vector((REG_WIDTH - 1) DOWNTO 0);
     SIGNAL entradaB_ula               : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     SIGNAL saida_mux_saidaULA_RAM     : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
-    
+    SIGNAL saida_mux_saidaULA_RAM_imediatoUI     : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+
     -- Saidas Intermediarias
     SIGNAL saidaRegA, saidaRegB       : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
     SIGNAL saida_somador              : std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
@@ -55,6 +56,8 @@ ARCHITECTURE main OF fluxo_dados IS
     ALIAS opCodeLocal                 : std_logic_vector(5 DOWNTO 0) IS Instrucao(31 DOWNTO 26);
     ALIAS functLocal                  : std_logic_vector(5 DOWNTO 0) IS Instrucao(5 DOWNTO 0);
 
+	ALIAS muxRAM_ImediatoUI           : std_logic IS palavraControle(11);
+	ALIAS BNE                         : std_logic IS palavraControle(10);
     ALIAS muxProxPC                   : std_logic IS palavraControle(9);
 	ALIAS muxULA_imediato	          : std_logic IS palavraControle(8);
 	ALIAS hab_escrita_RAM	          : std_logic IS palavraControle(7);
@@ -134,7 +137,7 @@ BEGIN
         PORT MAP(
             entradaA_MUX => SomaUm_MuxProxPC,
             entradaB_MUX => saida_somador,
-            seletor_MUX  => (BEQ AND flag_zero),
+            seletor_MUX  => ((BEQ AND flag_zero) OR (BNE AND NOT(flag_zero))),
             saida_MUX    => saidaMux_proxPC_somaImedProxPC
         );
 
@@ -171,7 +174,7 @@ BEGIN
             enderecoA       => RS,
             enderecoB       => RT,
             enderecoC       => saidaMux_Rt_Rd,
-            dadoEscritaC    => saida_mux_saidaULA_RAM,
+            dadoEscritaC    => saida_mux_saidaULA_RAM_imediatoUI,
             escreveC        => escritaReg,
 
             saidaA          => saidaRegA,
@@ -236,6 +239,17 @@ BEGIN
             entradaB_MUX => saidaRAM,
             seletor_MUX  => muxULA_imediato,
             saida_MUX    => saida_mux_saidaULA_RAM
+        );
+
+    mux_RAM_imediato_ui : ENTITY work.mux_generico_2x1
+        GENERIC MAP(
+            larguraDados => DATA_WIDTH
+        )
+        PORT MAP(
+            entradaA_MUX => saida_mux_saidaULA_RAM,
+            entradaB_MUX => imediato & "0000000000000000",
+            seletor_MUX  => muxRAM_ImediatoUI,
+            saida_MUX    => saida_mux_saidaULA_RAM_imediatoUI
         );
 
     funct           <= functLocal;
