@@ -1,4 +1,6 @@
 vendor_name = ModelSim
+source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/interface_hex.vhd
+source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/conversor_hex_7_segmentos.vhd
 source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/add_32.vhd
 source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/mux_4x1.vhd
 source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/full_adder.vhd
@@ -25,8 +27,9 @@ source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/Waveform5.vwf
 source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/Waveform6.vwf
 source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/Waveform7.vwf
 source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/Waveform8.vwf
-source_file = 1, Waveform9.vwf
+source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/Waveform9.vwf
 source_file = 1, Waveform10.vwf
+source_file = 1, /home/gabrielzezze/Desktop/mips-project/vhdl/db/mips-project.cmp.rdb
 source_file = 1, /home/gabrielzezze/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, /home/gabrielzezze/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, /home/gabrielzezze/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/timing_b.vhd

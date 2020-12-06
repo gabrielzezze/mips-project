@@ -15,12 +15,12 @@ END ENTITY;
 
 ARCHITECTURE comportamento OF interface_hex IS
 
-    -- SIGNAL signal_hex0 : std_logic_vector(6 DOWNTO 0);
-    -- SIGNAL signal_hex1 : std_logic_vector(6 DOWNTO 0);
-    -- SIGNAL signal_hex2 : std_logic_vector(6 DOWNTO 0);
-    -- SIGNAL signal_hex3 : std_logic_vector(6 DOWNTO 0);
-    -- SIGNAL signal_hex4 : std_logic_vector(6 DOWNTO 0);
-    -- SIGNAL signal_hex5 : std_logic_vector(6 DOWNTO 0);
+    SIGNAL signal_hex0 : std_logic_vector(6 DOWNTO 0);
+    SIGNAL signal_hex1 : std_logic_vector(6 DOWNTO 0);
+    SIGNAL signal_hex2 : std_logic_vector(6 DOWNTO 0);
+    SIGNAL signal_hex3 : std_logic_vector(6 DOWNTO 0);
+    SIGNAL signal_hex4 : std_logic_vector(6 DOWNTO 0);
+    SIGNAL signal_hex5 : std_logic_vector(6 DOWNTO 0);
 
 BEGIN
 
@@ -30,7 +30,7 @@ BEGIN
             apaga     => '0',
             negativo  => '0',
             overFlow  => '0',
-            saida7seg => HEX0);
+            saida7seg => signal_hex0);
 
     conversorHex1 : ENTITY work.conversorHex7Seg
         PORT MAP(
@@ -38,7 +38,7 @@ BEGIN
             apaga     => '0',
             negativo  => '0',
             overFlow  => '0',
-            saida7seg => HEX1);
+            saida7seg => signal_hex1);
 
     conversorHex2 : ENTITY work.conversorHex7Seg
         PORT MAP(
@@ -46,7 +46,7 @@ BEGIN
             apaga     => '0',
             negativo  => '0',
             overFlow  => '0',
-            saida7seg => HEX2);
+            saida7seg => signal_hex2);
 
     conversorHex3 : ENTITY work.conversorHex7Seg
         PORT MAP(
@@ -54,7 +54,7 @@ BEGIN
             apaga     => '0',
             negativo  => '0',
             overFlow  => '0',
-            saida7seg => HEX3);
+            saida7seg => signal_hex3);
 
     conversorHex4 : ENTITY work.conversorHex7Seg
         PORT MAP(
@@ -62,7 +62,7 @@ BEGIN
             apaga     => '0',
             negativo  => '0',
             overFlow  => '0',
-            saida7seg => HEX4);
+            saida7seg => signal_hex4);
 
     conversorHex5 : ENTITY work.conversorHex7Seg
         PORT MAP(
@@ -70,6 +70,15 @@ BEGIN
             apaga     => '0',
             negativo  => '0',
             overFlow  => '0',
-            saida7seg => HEX5);
+            saida7seg => signal_hex5);
+
+            
+    HEX0 <= signal_hex0;
+    HEX1 <= signal_hex1;
+    HEX2 <= signal_hex2;
+    HEX3 <= signal_hex3;
+    HEX4 <= signal_hex4;
+    HEX5 <= signal_hex5;
+
     
 END ARCHITECTURE;

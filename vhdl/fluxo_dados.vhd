@@ -22,7 +22,7 @@ ENTITY fluxo_dados IS
 
         -- OUT
         opCode, funct          : OUT std_logic_vector(5 DOWNTO 0);
-        saida_ula, saida_regA, saida_regB, saida_entrada_B_ULA : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+        saida_ula, saida_regA, saida_regB, saida_escrita_banco_reg : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
         saida_rom, saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
         flag_zero_out         : out std_logic;
         ula_out_op            : OUT std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0)
@@ -288,6 +288,6 @@ BEGIN
     saida_pc        <= PC_ROM;
     flag_zero_out   <= flag_zero;
     ula_out_op      <= seletor_ula_local;
-    saida_entrada_B_ULA <= entradaB_ula;
+    saida_escrita_banco_reg <= saida_mux_saidaULA_RAM_imediatoUI;
 
 END ARCHITECTURE;
