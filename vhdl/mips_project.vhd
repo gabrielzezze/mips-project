@@ -53,7 +53,7 @@ ARCHITECTURE main OF mips_project IS
     SIGNAL opCode           : std_logic_vector(5 DOWNTO 0);
     SIGNAL funct            : std_logic_vector(5 DOWNTO 0);
     SIGNAL palavraControle  : std_logic_vector((PALAVRA_CONTROLE_WIDTH - 1) DOWNTO 0);
-    SIGNAL saida_ula_temp, saida_regA_temp, saida_regB_temp : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+    SIGNAL saida_ula_temp, saida_regA_temp, saida_regB_temp, saida_entrada_B_ULA : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     SIGNAL saida_rom_temp, saida_pc_temp   : std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
     SIGNAL flag_zero_temp : std_logic;
     SIGNAL ula_out_op : std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0);
@@ -96,6 +96,17 @@ BEGIN
                 funct    => funct,
                 flag_zero_out => flag_zero_temp,
                 ula_out_op    => ula_out_op
+            );
+
+    interface_hex: ENTITY work.interface_hex
+            GENERIC MAP(
+                DATA_WIDTH => DATA_WIDTH
+            )
+            PORT MAP(
+                valor => saida_pc WHEN (NOT SW(0) AND NOT SW(1)) ELSE
+                         saida_ula WHEN (SW(0) AND NOT SW(1)) ELSE
+                         saida_entrada_B_ULA WHEN (SW(0) AND SW(1)) ELSE
+                         (OTHERS => 0)
             );
 
 
