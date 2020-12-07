@@ -17,24 +17,41 @@ ENTITY mips_project IS
         -- etapa de design do processador.
         TOTAL_WIDTH: NATURAL := 32;
 
+        -- Tamanho da palavra de controle derivada 
+        -- da unidade de controle
         PALAVRA_CONTROLE_WIDTH: NATURAL := 15;
+
+        -- Tamanho da parte chamade de "funct" da instrução
+        -- caso seja uma instrução do tipo R.
         FUNCT_WIDTH      : NATURAL := 6;
+
+        -- Tamanho do seletor passado para a ULA
+        -- o qual determina qual operação sera feita
         ULA_OP_WIDTH     : NATURAL := 3;
         SELETOR_ULA_WIDTH : NATURAL := 3
     );
 
     PORT (
         -- SINAIS DE ENTRADA --
+
         -- Clock vindo da placa FPGA
         -- aproximadamente 50 MHz.
         CLOCK_50     : IN std_logic;
+
+        -- Displays hexadecimais derivados do hardware
+        -- mapeado atraves do arquivo .qsf
         HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
 
         -- Sinal das chaves da placa FPGA
+        -- mapeado atraves do arquivo .qsf
         SW           : IN std_logic_vector(9 DOWNTO 0);
+
         -- Sinal dos Botões da placa FPGA
+        -- mapeado atraves do arquivo .qsf
         KEY          : IN std_logic_vector(3 DOWNTO 0);
+
         -- Sinal do botão Reset da placa FPGA
+        -- mapeado atraves do arquivo .qsf e tambem usado para simular clock.
         FPGA_RESET_N : IN std_logic
     );
 	 
@@ -43,6 +60,7 @@ END ENTITY;
 
 ARCHITECTURE main OF mips_project IS
 
+    -- Sinais intermediarios --
     SIGNAL opCode           : std_logic_vector(5 DOWNTO 0);
     SIGNAL funct            : std_logic_vector(5 DOWNTO 0);
     SIGNAL palavraControle  : std_logic_vector((PALAVRA_CONTROLE_WIDTH - 1) DOWNTO 0);
@@ -63,6 +81,8 @@ ARCHITECTURE main OF mips_project IS
 
 BEGIN
 
+    -- Detector de borda de subida, o qual a partir do sinal do botao reset do hardware
+    -- gera um clock quando este é pressionado.
     detector_sub_0 : ENTITY work.edge_detector(borda_subida)
     PORT MAP(
         clk     => CLOCK_50,
@@ -71,6 +91,8 @@ BEGIN
     );
 
     -- Instância do componente unidade_controle
+    -- Usado para decodificar a o opcode + funct em pontos de controles (usados no fluxo de dados)
+    -- o qual é retornado concatenado atravé do sinal palavraControle
     unidade_controle : ENTITY work.unidade_controle
         GENERIC MAP (
             PALAVRA_CONTROLE_WIDTH => PALAVRA_CONTROLE_WIDTH,
@@ -83,7 +105,9 @@ BEGIN
             palavraControle => palavraControle
         );
 
-        -- Instância do componente resposável pelo fluxo de dados .   
+    -- Instância do componente resposável pelo fluxo de dados.
+    -- A partir da palavraControle gerada pela unidade de controle é capaz de
+    -- conectar os components do processador e passar os sinais devidos para a execução da instrução.   
     FD: ENTITY work.fluxo_dados
             GENERIC MAP(
                 DATA_WIDTH => DATA_WIDTH,
@@ -110,10 +134,15 @@ BEGIN
             );
 
 
-    valor <=    saida_pc_temp              WHEN (NOT SW(0) AND NOT SW(1))  ELSE
+    -- Valor que sera mostrado nos displays hexadecimais
+    -- dependendo das configurações das chaves é possivel mostrar:
+    -- saida do program counter, saida da ULA e dado que será escrito no banco de registradores.
+    valor   <=  saida_pc_temp              WHEN (NOT SW(0) AND NOT SW(1))  ELSE
                 saida_ula_temp             WHEN (SW(0) AND NOT SW(1))      ELSE
                 saida_escrita_banco_reg;
 
+    -- Converte os bits 3 a 0 do valor que sera mostrado nos displayes hexadecimais
+    -- para um sinal de 7 bits que corresponde a representação em hexadecimal destes 4 bits.
     conversorHex0 : ENTITY work.conversorHex7Seg
         PORT MAP(
             dadoHex   => valor(3 DOWNTO 0),
@@ -122,6 +151,8 @@ BEGIN
             overFlow  => '0',
             saida7seg => signal_hex0);
 
+    -- Converte os bits 7 a 4 do valor que sera mostrado nos displayes hexadecimais
+    -- para um sinal de 7 bits que corresponde a representação em hexadecimal destes 4 bits.
     conversorHex1 : ENTITY work.conversorHex7Seg
         PORT MAP(
             dadoHex   => valor(7 DOWNTO 4),
@@ -129,7 +160,9 @@ BEGIN
             negativo  => '0',
             overFlow  => '0',
             saida7seg => signal_hex1);
-
+    
+    -- Converte os bits 11 a 8 do valor que sera mostrado nos displayes hexadecimais
+    -- para um sinal de 7 bits que corresponde a representação em hexadecimal destes 4 bits.
     conversorHex2 : ENTITY work.conversorHex7Seg
         PORT MAP(
             dadoHex   => valor(11 DOWNTO 8),
@@ -137,7 +170,9 @@ BEGIN
             negativo  => '0',
             overFlow  => '0',
             saida7seg => signal_hex2);
-
+    
+    -- Converte os bits 15 a 12 do valor que sera mostrado nos displayes hexadecimais
+    -- para um sinal de 7 bits que corresponde a representação em hexadecimal destes 4 bits.
     conversorHex3 : ENTITY work.conversorHex7Seg
         PORT MAP(
             dadoHex   => valor(15 DOWNTO 12),
@@ -145,7 +180,9 @@ BEGIN
             negativo  => '0',
             overFlow  => '0',
             saida7seg => signal_hex3);
-
+    
+    -- Converte os bits 19 a 16 do valor que sera mostrado nos displayes hexadecimais
+    -- para um sinal de 7 bits que corresponde a representação em hexadecimal destes 4 bits.
     conversorHex4 : ENTITY work.conversorHex7Seg
         PORT MAP(
             dadoHex   => valor(19 DOWNTO 16),
@@ -153,7 +190,9 @@ BEGIN
             negativo  => '0',
             overFlow  => '0',
             saida7seg => signal_hex4);
-
+    
+    -- Converte os bits 23 a 20 do valor que sera mostrado nos displayes hexadecimais
+    -- para um sinal de 7 bits que corresponde a representação em hexadecimal destes 4 bits.
     conversorHex5 : ENTITY work.conversorHex7Seg
         PORT MAP(
             dadoHex   => valor(23 DOWNTO 20),
@@ -162,7 +201,8 @@ BEGIN
             overFlow  => '0',
             saida7seg => signal_hex5);
 
-            
+    -- Usa os sinais de 7 bits convertidos pelos conversores para
+    -- mostrar op valor completo nos respectivos displays.
     HEX0 <= signal_hex0;
     HEX1 <= signal_hex1;
     HEX2 <= signal_hex2;
