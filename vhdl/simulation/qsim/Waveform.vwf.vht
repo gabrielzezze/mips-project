@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/30/2020 17:50:07"
+-- Generated on "12/06/2020 21:53:59"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mips_project
 -- 
@@ -36,27 +36,23 @@ ARCHITECTURE mips_project_arch OF mips_project_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL FPGA_RESET_N : STD_LOGIC;
-SIGNAL funct_out : STD_LOGIC_VECTOR(5 DOWNTO 0);
-SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL op_code_out : STD_LOGIC_VECTOR(5 DOWNTO 0);
-SIGNAL saida_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL saida_regA : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL saida_regB : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL saida_rom : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL saida_ula : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX5 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT mips_project
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
 	FPGA_RESET_N : IN STD_LOGIC;
-	funct_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
-	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	op_code_out : BUFFER STD_LOGIC_VECTOR(5 DOWNTO 0);
-	saida_pc : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_regA : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_regB : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_rom : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
-	saida_ula : BUFFER STD_LOGIC_VECTOR(31 DOWNTO 0);
+	HEX0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX2 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX3 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX4 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX5 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
@@ -66,14 +62,12 @@ BEGIN
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
 	FPGA_RESET_N => FPGA_RESET_N,
-	funct_out => funct_out,
-	KEY => KEY,
-	op_code_out => op_code_out,
-	saida_pc => saida_pc,
-	saida_regA => saida_regA,
-	saida_regB => saida_regB,
-	saida_rom => saida_rom,
-	saida_ula => saida_ula,
+	HEX0 => HEX0,
+	HEX1 => HEX1,
+	HEX2 => HEX2,
+	HEX3 => HEX3,
+	HEX4 => HEX4,
+	HEX5 => HEX5,
 	SW => SW
 	);
 
@@ -88,37 +82,6 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_CLOCK_50;
-
--- FPGA_RESET_N
-t_prcs_FPGA_RESET_N: PROCESS
-BEGIN
-	FPGA_RESET_N <= '0';
-WAIT;
-END PROCESS t_prcs_FPGA_RESET_N;
--- KEY[3]
-t_prcs_KEY_3: PROCESS
-BEGIN
-	KEY(3) <= '0';
-WAIT;
-END PROCESS t_prcs_KEY_3;
--- KEY[2]
-t_prcs_KEY_2: PROCESS
-BEGIN
-	KEY(2) <= '0';
-WAIT;
-END PROCESS t_prcs_KEY_2;
--- KEY[1]
-t_prcs_KEY_1: PROCESS
-BEGIN
-	KEY(1) <= '0';
-WAIT;
-END PROCESS t_prcs_KEY_1;
--- KEY[0]
-t_prcs_KEY_0: PROCESS
-BEGIN
-	KEY(0) <= '0';
-WAIT;
-END PROCESS t_prcs_KEY_0;
 -- SW[9]
 t_prcs_SW_9: PROCESS
 BEGIN
@@ -179,4 +142,11 @@ BEGIN
 	SW(0) <= '0';
 WAIT;
 END PROCESS t_prcs_SW_0;
+
+-- FPGA_RESET_N
+t_prcs_FPGA_RESET_N: PROCESS
+BEGIN
+	FPGA_RESET_N <= '0';
+WAIT;
+END PROCESS t_prcs_FPGA_RESET_N;
 END mips_project_arch;

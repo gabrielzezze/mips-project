@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/gabrielzezze/Desktop/mips-project/simulation/qsim
 Emips_project
-Z0 w1607263208
+Z0 w1607302441
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,24 +20,24 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 158
+!i122 164
 Z10 d/home/gabrielzezze/Desktop/mips-project/vhdl/simulation/qsim
 Z11 8mips-project.vho
 Z12 Fmips-project.vho
 l0
 L39 1
-V21B1J[4L<bPJH78jFY3P11
-!s100 9`;KTB60j@gWz6fR4aAM>1
+V?a?n?ZPo75gSPMK4gM[1;1
+!s100 W?BoE<71hO]zA<>WZim5@3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1607263209
+!s110 1607302442
 !i10b 1
-Z15 !s108 1607263208.000000
-Z16 !s90 -work|work|mips-project.vho|
-Z17 !s107 mips-project.vho|
+Z14 !s108 1607302442.000000
+Z15 !s90 -work|work|mips-project.vho|
+Z16 !s107 mips-project.vho|
 !i113 1
-Z18 o-work work
-Z19 tExplicit 1 CvgOpt 0
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
 Astructure
 R1
 R2
@@ -48,60 +48,60 @@ R6
 R7
 R8
 R9
-DEx4 work 12 mips_project 0 22 21B1J[4L<bPJH78jFY3P11
-!i122 158
-l10008
-L271 109699
-V:0>oH^6VNkEeSI`l=LoYS2
-!s100 8X]00@2CRCEzd7O__okXM0
+DEx4 work 12 mips_project 0 22 ?a?n?ZPo75gSPMK4gM[1;1
+!i122 164
+l10405
+L110 114547
+Vjzhin`YH@aM^k5B4@<3M22
+!s100 Dd>G188:J]g4DD;:CGk<M1
 R13
 32
-R14
+!s110 1607302443
 !i10b 1
+R14
 R15
 R16
-R17
 !i113 1
+R17
 R18
-R19
 Emips_project_vhd_vec_tst
-Z20 w1607263205
+Z19 w1607302439
 R7
 R8
-!i122 159
+!i122 165
 R10
-Z21 8Waveform9.vwf.vht
-Z22 FWaveform9.vwf.vht
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
 l0
 L32 1
 VKXklG?4RO1KE2bUdd][2k1
 !s100 :ZJUdeX7?QH8DGV=KI0bo2
 R13
 32
-Z23 !s110 1607263210
+Z22 !s110 1607302444
 !i10b 1
-Z24 !s108 1607263210.000000
-Z25 !s90 -work|work|Waveform9.vwf.vht|
-!s107 Waveform9.vwf.vht|
+Z23 !s108 1607302443.000000
+Z24 !s90 -work|work|Waveform.vwf.vht|
+Z25 !s107 Waveform.vwf.vht|
 !i113 1
+R17
 R18
-R19
 Amips_project_arch
 R7
 R8
 Z26 DEx4 work 24 mips_project_vhd_vec_tst 0 22 KXklG?4RO1KE2bUdd][2k1
-!i122 159
-l71
-Z27 L34 161
-Z28 V4aToa7BDY5zf65Ia[Y]W_0
-Z29 !s100 kOJRT_WXo8MfGDTJW<G:F3
+!i122 165
+l59
+L34 119
+VCAGR7;8[Cj@8l95HGaB642
+!s100 k8lQ7=^0k;f?ofBG6il8A3
 R13
 32
-R23
+R22
 !i10b 1
+R23
 R24
 R25
-Z30 !s107 Waveform9.vwf.vht|
 !i113 1
+R17
 R18
-R19

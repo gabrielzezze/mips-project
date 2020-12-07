@@ -1,0 +1,35 @@
+Quartus Prime Archive log --	/home/gabrielzezze/Desktop/mips-project/vhdl/mips_project_GabrielZezze_PedroLuiz.qarlog
+
+Archive:	/home/gabrielzezze/Desktop/mips-project/vhdl/mips_project_GabrielZezze_PedroLuiz.qar
+Date:		Sun Dec  6 21:54:51 2020
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/gabrielzezze/Desktop/mips-project/vhdl/Waveform.vwf
+/home/gabrielzezze/Desktop/mips-project/vhdl/add_32.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/banco_registradores.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/conversor_hex_7_segmentos.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/db/mips-project.cmp.rdb
+/home/gabrielzezze/Desktop/mips-project/vhdl/edge_detector.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/extende_sinal.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/flip_flop.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/fluxo_dados.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/full_adder.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/mips-project.qpf
+/home/gabrielzezze/Desktop/mips-project/vhdl/mips-project.qsf
+/home/gabrielzezze/Desktop/mips-project/vhdl/mips_project.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/mux_4x1.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/mux_generico_2x1.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/ram_mips.vhdl
+/home/gabrielzezze/Desktop/mips-project/vhdl/registrador_generico.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/rom_mips.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/soma_constante.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/somador.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/ula.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/unidade_controle.vhd
+/home/gabrielzezze/Desktop/mips-project/vhdl/unidade_controle_ula.vhd
+/home/gabrielzezze/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
