@@ -48,7 +48,7 @@ ENTITY mips_project IS
 
         -- Sinal dos Botões da placa FPGA
         -- mapeado atraves do arquivo .qsf
-        KEY          : IN std_logic_vector(3 DOWNTO 0);
+        --KEY          : IN std_logic_vector(3 DOWNTO 0);
 
         -- Sinal do botão Reset da placa FPGA
         -- mapeado atraves do arquivo .qsf e tambem usado para simular clock.
@@ -64,10 +64,8 @@ ARCHITECTURE main OF mips_project IS
     SIGNAL opCode           : std_logic_vector(5 DOWNTO 0);
     SIGNAL funct            : std_logic_vector(5 DOWNTO 0);
     SIGNAL palavraControle  : std_logic_vector((PALAVRA_CONTROLE_WIDTH - 1) DOWNTO 0);
-    SIGNAL saida_ula_temp, saida_regA_temp, saida_regB_temp, saida_escrita_banco_reg : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
-    SIGNAL saida_rom_temp, saida_pc_temp   : std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
-    SIGNAL flag_zero_temp : std_logic;
-    SIGNAL ula_out_op : std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0);
+    SIGNAL saida_ula_temp, saida_escrita_banco_reg : std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+    SIGNAL saida_pc_temp   : std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
     SIGNAL valor :std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
     SIGNAL clk              : std_logic;
 
@@ -123,13 +121,8 @@ BEGIN
                 palavraControle => palavraControle,
                 opCode => opCode,
                 saida_ula => saida_ula_temp, 
-                saida_regA => saida_regA_temp, 
-                saida_regB => saida_regB_temp,
-                saida_rom => saida_rom_temp,
                 saida_pc => saida_pc_temp,
                 funct    => funct,
-                flag_zero_out => flag_zero_temp,
-                ula_out_op    => ula_out_op,
                 saida_escrita_banco_reg => saida_escrita_banco_reg
             );
 

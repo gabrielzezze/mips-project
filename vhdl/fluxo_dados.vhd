@@ -62,29 +62,14 @@ ENTITY fluxo_dados IS
         --registradores ou memória.
         saida_ula   : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0); 
 
-        -- Saida A do banco de registradores, usado na ULA.
-        saida_regA  : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
-
-        -- Saida B do banco de registradores, possivelmente usado na ULA.
-        -- depende do MUX mux_saidaRegB_imedExt.
-        saida_regB  : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
-
         -- Dado a ser escrito no banco de registradores.
         -- Também usado para ser escrito nos displays hexadecimais.
         saida_escrita_banco_reg : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
 
-        -- Saida da memória ROM (Instrução).
-        saida_rom: : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
 
         -- Saida do program counter, ou seja, endereço da ROM da
         -- proxima instrução a ser executada.
-        saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0);
-
-        -- Sinal que dita se a operação da ULA retornou 0.
-        flag_zero_out         : out std_logic;
-
-        -- Operação derivada da unidade de controle da ULA.
-        ula_out_op            : OUT std_logic_vector((SELETOR_ULA_WIDTH - 1) DOWNTO 0)
+        saida_pc   : OUT std_logic_vector((TOTAL_WIDTH - 1) DOWNTO 0)
     );
 
 END ENTITY;
@@ -158,7 +143,7 @@ BEGIN
             RST    => '0'
         );
 
-    -- ??
+    -- Mux que seleciona entre o program counter + 4 ou a saida A do banco de registradores.
     mux_prox_PC_regA : ENTITY work.mux_4x1
         GENERIC MAP(
             DATA_WIDTH => ADDR_WIDTH
@@ -184,7 +169,7 @@ BEGIN
             saida   => SomaUm_MuxProxPC
         );
 
-    -- ???
+    -- Mux que seleciona entre o program counter + 4 ou o valor do imediato shifitado duas vezes.
     soma_proxPC_imedShift2 : ENTITY work.somador
         GENERIC MAP(
             larguraDados => ADDR_WIDTH --32
@@ -207,7 +192,8 @@ BEGIN
             estendeSinal_OUT   => imediato_extendido
         );
     
-    -- 
+    -- Mux que seleciona entre o program counter + 4 ou a soma do program counter + 4
+    -- com o imediato shiftado.
     mux_proxPC_soma_proxPCImedShift2 : ENTITY work.mux_generico_2x1
         GENERIC MAP(
             larguraDados => ADDR_WIDTH
@@ -219,7 +205,7 @@ BEGIN
             saida_MUX    => saidaMux_proxPC_somaImedProxPC
         );
 
-    -- Memória ROM a qual armzena as intruções.
+    -- Memória ROM a qual armazena as intruções.
     ROM : ENTITY work.rom_mips
         GENERIC MAP(
             dataWidth => TOTAL_WIDTH,
@@ -375,12 +361,7 @@ BEGIN
     funct           <= functLocal;
     opCode          <= opCodeLocal;
     saida_ula       <= saidaULA;
-    saida_regA      <= saidaRegA;
-    saida_regB      <= saidaRegB;
-    saida_rom       <= Instrucao;
     saida_pc        <= PC_ROM;
-    flag_zero_out   <= flag_zero;
-    ula_out_op      <= seletor_ula_local;
     saida_escrita_banco_reg <= saida_mux_saidaULA_RAM_imediatoUI;
 
 END ARCHITECTURE;
