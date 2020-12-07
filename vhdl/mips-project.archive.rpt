@@ -1,5 +1,5 @@
 Archive Project report for mips-project
-Sun Dec  6 21:54:51 2020
+Sun Dec  6 21:59:50 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Sun Dec  6 21:54:51 2020 ;
+; Archive Project Status ; Successful - Sun Dec  6 21:59:50 2020 ;
 ; Revision Name          ; mips-project                          ;
 ; Top-level Entity Name  ; mips_project                          ;
 ; Family                 ; Cyclone V                             ;
@@ -54,14 +54,14 @@ Info: Archive will store files relative to the closest common parent directory
 Info (13213): Using common directory /home/gabrielzezze/Desktop/mips-project/vhdl/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive '/home/gabrielzezze/Desktop/mips-project/vhdl/mips_project_GabrielZezze_PedroLuiz.qar'
+Info: Generated archive '/home/gabrielzezze/Desktop/test1/mips_GabrielZezze_PedroLuiz.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'mips-project.archive.rpt'
 Info (23030): Evaluation of Tcl script /home/gabrielzezze/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 622 megabytes
-    Info: Processing ended: Sun Dec  6 21:54:51 2020
+    Info: Processing ended: Sun Dec  6 21:59:50 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -81,6 +81,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; flip_flop.vhd                                                                  ;
 ; fluxo_dados.vhd                                                                ;
 ; full_adder.vhd                                                                 ;
+; interface_hex.vhd                                                              ;
 ; mips-project.qpf                                                               ;
 ; mips-project.qsf                                                               ;
 ; mips_project.vhd                                                               ;
@@ -88,6 +89,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; mux_generico_2x1.vhd                                                           ;
 ; ram_mips.vhdl                                                                  ;
 ; registrador_generico.vhd                                                       ;
+; rom_content.mif                                                                ;
 ; rom_mips.vhd                                                                   ;
 ; soma_constante.vhd                                                             ;
 ; somador.vhd                                                                    ;
